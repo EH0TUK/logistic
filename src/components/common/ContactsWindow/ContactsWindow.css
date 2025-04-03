@@ -1,0 +1,113 @@
+.contacts-window {
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(242, 212, 183, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateY(-20px);
+  z-index: 999;
+}
+
+.contacts-window.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Заголовок и линия на одном уровне */
+.contacts-window__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.contacts-window__line {
+  width: 50px;
+  height: 2px;
+  background-color: #f2d4b7;
+  margin-bottom: 0;
+  /* Убираем отступ, так как заголовок и линия на одном уровне */
+}
+
+.contacts-window__title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #f2d4b7;
+  margin-bottom: 0;
+  /* Убираем отступ, так как заголовок и линия на одном уровне */
+}
+
+/* Подзаголовки */
+.contacts-window__subtitle {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* Номера для связи */
+.contacts-window__contacts {
+  margin-bottom: 30px;
+}
+
+.contacts-window__info {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+.contacts-window__info:hover {
+  color: #f2d4b7;
+  /* Цвет при наведении */
+}
+
+/* Электронный адрес */
+.contacts-window__email {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-weight: 600;
+
+}
+
+.contacts-window__email:hover {
+  color: #f2d4b7;
+  /* Цвет при наведении */
+}
+
+/* Иконки для связи на одном уровне */
+.contacts-window__socials {
+  display: flex;
+  gap: 15px;
+}
+
+.contacts-window__social-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: filter 0.3s ease-in-out;
+  margin-right: 10px;
+  /* Плавное изменение иконок */
+}
+
+.contacts-window__social-link:hover {
+  filter: brightness(0.8);
+  /* Изменение яркости при наведении */
+}
+
+.contacts-window__social-icon {
+  width: 28px;
+  height: 28px;
+}

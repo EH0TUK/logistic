@@ -1,0 +1,112 @@
+.footer {
+    background-color: #0e0e0e;
+    color: #888888;
+    /* Затемненный цвет текста по умолчанию */
+    padding-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.footer__top-line {
+    height: 2px;
+    background-color: #ffffff;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer__column:last-child {
+    margin-right: 0;
+}
+
+.footer__company-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+    /* Белый цвет для названия компании */
+}
+
+.footer__nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__nav-item {
+    margin-bottom: 20px;
+}
+
+.footer__nav-item a {
+    color: #888888;
+    /* Затемненный цвет для ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__nav-item a:hover {
+    color: #F2D4B7;
+    /* Цвет при наведении */
+}
+
+.footer__phone,
+.footer__email {
+    display: block;
+    margin-bottom: 20px;
+    color: #888888;
+    /* Затемненный цвет для телефонов и почты */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__phone:hover,
+.footer__email:hover {
+    color: #F2D4B7;
+    /* Цвет при наведении */
+}
+
+.footer__social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer__social-link {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.footer__social-icon {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s ease;
+    filter: brightness(0.7);
+    /* Затемнение иконок */
+}
+
+.footer__social-link:hover .footer__social-icon {
+    filter: brightness(1);
+    /* Возвращаем яркость при наведении */
+}
+
+.footer__bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #888888;
+    /* Затемненный цвет для текста внизу */
+}
+
+.footer__bottom p {
+    margin: 0;
+}

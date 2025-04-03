@@ -1,0 +1,19 @@
+.info-block {
+    display: flex;
+    align-items: center;
+    max-width: 33.33%;
+}
+.info-block:first-child {
+    margin-right: 20px;
+}
+.info-block:last-child {
+    margin-left: 20px;
+}
+.info-block__image {
+    height: 60px;
+    width: 60px;
+}
+
+.info-block__text {
+    padding-left: 20px;
+}

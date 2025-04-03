@@ -1,0 +1,10 @@
+.company-stats {
+    width: 100%;
+    padding: 20px 0 100px;
+}
+
+.compaty-stats__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}

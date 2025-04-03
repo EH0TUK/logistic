@@ -1,0 +1,16 @@
+.transport-section {
+    padding-bottom: 60px;
+}
+.transport-section-title {
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #f2d4b7;
+}
+
+.transport-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* Отступ между карточками */
+}

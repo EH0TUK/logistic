@@ -1,0 +1,102 @@
+{
+    "header": {
+        "title": "Contacts",
+        "description": "Get a personal consultation on multimodal transportation..."
+    },
+    "offices": {
+        "title": "Our Offices",
+        "items": [
+            {
+                "name": "Head Office",
+                "address": "123 Logistics St, Moscow, Russia",
+                "coordinates": [
+                    55.751244,
+                    37.618423
+                ],
+                "phone": "+7 (495) 123-45-67",
+                "email": "info@logistics.com",
+                "workingHours": {
+                    "weekdays": "Mon-Fri: 9:00 AM - 6:00 PM",
+                    "weekend": "Sat-Sun: Closed"
+                }
+            },
+            {
+                "name": "Sales Department",
+                "address": "45, Transportnaya Street, St. Petersburg",
+                "coordinates": [
+                    59.934280,
+                    30.335099
+                ],
+                "phone": "+7 (495) 765-43-21",
+                "email": "sales@logistics.com"
+            },
+            {
+                "name": "Customer Support",
+                "phone": "+7 (495) 111-22-33 (24/7)",
+                "email": "support@logistics.com",
+                "description": "Assistance for your logistics needs.",
+                "workingHours": "24/7"
+            },
+            {
+                "name": "Customs Clearance",
+                "phone": "+7 (495) 999-88-77",
+                "email": "customs@logistics.com",
+                "description": "Contact our specialist for international trade documentation."
+            }
+        ]
+    },
+    "additionalSections": {
+        "socials": {
+            "title": "Follow Us",
+            "items": [
+                {
+                    "name": "LinkedIn",
+                    "url": "https://linkedin.com/company/your-company",
+                    "icon": "linkedin"
+                },
+                {
+                    "name": "Facebook",
+                    "url": "https://facebook.com/your-company",
+                    "icon": "facebook"
+                },
+                {
+                    "name": "Telegram",
+                    "url": "https://t.me/your-company",
+                    "icon": "telegram"
+                }
+            ]
+        },
+        "requisites": {
+            "title": "Company Details",
+            "items": [
+                {
+                    "label": "Legal Name",
+                    "value": "Logistics Solutions LLC"
+                },
+                {
+                    "label": "Tax ID",
+                    "value": "1234567890"
+                }
+            ]
+        },
+        "faq": {
+            "title": "FAQ",
+            "items": [
+                {
+                    "question": "How to track my shipment?",
+                    "answer": "Use the tracking number in your personal account."
+                },
+                {
+                    "question": "What documents are needed?",
+                    "answer": "Invoice, packing list, and customs declaration."
+                }
+            ]
+        }
+    },
+    "labels": {
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "workingHours": "Working Hours"
+    }
+}
