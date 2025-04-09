@@ -1,0 +1,82 @@
+{
+    "hero": {
+        "title": "Cargo Transportation in Russia and CIS",
+        "description": "Safe and reliable delivery of your cargo anywhere in the world with a guarantee",
+        "button": "Order"
+    },
+    "companyInfo": {
+        "title": "COMPANY NAME",
+        "description": "The logistics company 'OUR CONTINENT' was founded in 2018. For 8 years we have been working in this field and transporting oversized cargo across Russia and CIS countries. We have everything necessary for this responsible and complex work. Our main goals are timely delivery of cargo from point A to point B while maintaining the quality and integrity of the transported goods. Quality, punctuality and responsibility are our key skills."
+    },
+    "advantages": {
+        "items": [
+            "We offer faster delivery times than companies with warehouses",
+            "Cargo remains undamaged as we avoid warehouse reloading",
+            "Our company works with partial loads and dedicated trucks, depending on the client's needs",
+            "We work on a contractual basis and offer any convenient payment method"
+        ]
+    },
+    "stats": {
+        "clients": "Clients",
+        "cargo": "Tons of cargo",
+        "years": "Years of work",
+        "employees": "Employees"
+    },
+    "calculator": {
+        "title": "Calculate the cost",
+        "subtitle": "of cargo transportation",
+        "description": "Submit your request and our manager will call you back",
+        "fields": {
+            "origin": "Pickup location",
+            "destination": "Delivery destination",
+            "type": "Cargo name",
+            "weight": "Cargo weight",
+            "volume": "Cargo volume (m³)",
+            "name": "Your name",
+            "phone": "Your phone number",
+            "port": "Destination port",
+            "deliveryType": "Delivery type",
+            "containerType": "Container type",
+            "customsClearance": "Customs clearance needed",
+            "deliveryTime": "Estimated delivery time"
+        },
+        "deliveryTypes": {
+            "multimodal": "Multimodal",
+            "road": "Road",
+            "rail": "Railway",
+            "sea": "Sea"
+        },
+        "placeholders": {
+            "origin": "Example: Kazakhstan, Astana",
+            "destination": "Example: Belarus, Brest",
+            "type": "Example: Car",
+            "weight": "Example: 1200kg",
+            "volume": "Example: 10 m3",
+            "name": "John Doe",
+            "phone": "+1 (___) ___-____",
+            "port": "Example: Hamburg port",
+            "containerType": "Example: 20ft refrigerated",
+            "customsClearance": "Example: Yes/No",
+            "deliveryTime": "Example: 5-7 days"
+        },
+        "errors": {
+            "required": "This field is required",
+            "phoneRequired": "Enter phone number",
+            "phoneShort": "Number is too short",
+            "weightFormat": "Enter weight in kg (example: 1500kg)",
+            "volumeFormat": "Enter volume in m³ (example: 10 m3)",
+            "portRequired": "Specify destination port",
+            "deliveryFormat": "Enter time range (example: 5-7 days)"
+        },
+        "sending": "Sending...",
+        "button": "Calculate shipment",
+        "agreement": "By clicking the button I agree to the processing of my personal data",
+        "success": "Request successfully sent!",
+        "error": "Sending error. Please try again."
+    },
+    "infoBlocks": {
+        "truck": "Freight transportation by any type of vehicle",
+        "heavyTruck": "No weight restrictions",
+        "train": "Multimodal cargo transportation"
+    }
+}

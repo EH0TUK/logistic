@@ -1,0 +1,28 @@
+{
+    "title": "Public Offer",
+    "sections": {
+        "general": {
+            "title": "1. General Terms",
+            "content": "LLC \"TransOffer\" (Tax ID XXXXXXXX) offers to enter into an agreement under the following conditions:"
+        },
+        "acceptance": {
+            "title": "2. Acceptance Procedure",
+            "content": "The offer shall be considered accepted upon:",
+            "items": [
+                "Completion of the cost calculation form",
+                "Payment of the issued invoice",
+                "Signing of the contract"
+            ]
+        },
+        "deliveryTerms": {
+            "title": "3. Transportation Terms",
+            "content": "Delivery timelines are calculated individually and depend on:",
+            "items": [
+                "Selected route",
+                "Transport mode (road/rail/sea/air)",
+                "Customs clearance procedures"
+            ]
+        },
+        "companyDetails": "Company details:<br>LLC \"TransOffer\"<br>Tax ID: XXXXXXXXXX<br>Legal address: [Your registered address]"
+    }
+}

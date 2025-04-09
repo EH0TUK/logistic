@@ -1,0 +1,108 @@
+{
+    "advantages": {
+        "title": "Our Advantages",
+        "items": {
+            "experience": {
+                "title": "Years of Experience",
+                "description": "Over 10 years in the logistics market. We successfully work with clients from various industries, ensuring reliability and quality of our services. Our experience allows us to solve even the most complex logistics challenges."
+            },
+            "approach": {
+                "title": "Integrated Approach",
+                "description": "We use all types of transport: sea, rail, road and air. This allows us to choose optimal routes and minimize cargo transportation costs."
+            },
+            "network": {
+                "title": "Global Network",
+                "description": "Our partners are located in 50+ countries worldwide. This enables us to organize international shipments with minimal delays and maximum efficiency."
+            },
+            "solutions": {
+                "title": "Custom Solutions",
+                "description": "We develop logistics strategies, taking into account the specifics of each client. Our solutions are tailored to your needs and cargo characteristics."
+            },
+            "technology": {
+                "title": "Modern Technologies",
+                "description": "We use advanced cargo tracking systems, allowing our clients to always be aware of the location and condition of their shipments."
+            }
+        }
+    },
+    "team": {
+        "title": "Our Team",
+        "description": "Behind every successful project is a team of professionals. Our employees are experienced logisticians, customer service managers and technical specialists who work together to provide a high level of service.",
+        "members": {
+            "member1": {
+                "name": "Ivan Ivanov",
+                "position": "CEO",
+                "description": "Over 15 years of experience in logistics. Responsible for the company's strategic development."
+            },
+            "member2": {
+                "name": "Maria Petrova",
+                "position": "Customer Service Manager",
+                "description": "Specialist with 10 years of experience. Always finds an individual approach to each client."
+            },
+            "member3": {
+                "name": "Alexey Sidorov",
+                "position": "Technical Director",
+                "description": "Expert in logistics process automation. Implements advanced technologies."
+            },
+            "member4": {
+                "name": "Daniil Kuznetsov",
+                "position": "Logistician",
+                "description": "Organizes international shipments with minimal delays and maximum efficiency."
+            },
+            "member5": {
+                "name": "Dmitry Vasiliev",
+                "position": "Analyst",
+                "description": "Analyzes logistics processes and offers solutions to optimize costs."
+            },
+            "member6": {
+                "name": "Olga Smirnova",
+                "position": "Quality Manager",
+                "description": "Monitors service quality and ensures high level of service."
+            },
+            "member7": {
+                "name": "Sergey Mikhailov",
+                "position": "IT Solutions Developer",
+                "description": "Creates and maintains IT systems for logistics management."
+            }
+        }
+    },
+    "whyChooseUs": {
+        "title": "Why Choose Us?",
+        "items": {
+            "guarantee": {
+                "title": "Guaranteed cargo safety",
+                "description": "We ensure maximum safety of your cargo at all stages of transportation. Our specialists carefully control each process to avoid damage or loss."
+            },
+            "optimization": {
+                "title": "Logistics cost optimization",
+                "description": "Our solutions help minimize logistics costs without compromising quality. We select optimal routes and transport types to reduce your expenses."
+            },
+            "support": {
+                "title": "24/7 customer support",
+                "description": "Our support team is available around the clock. You can always contact us to resolve any cargo transportation issues."
+            },
+            "services": {
+                "title": "Wide range of services",
+                "description": "We offer a full range of logistics services including warehousing, customs clearance and cargo insurance. This makes us your universal logistics partner."
+            }
+        }
+    },
+    "mission": {
+        "title": "Our Mission",
+        "imageAlt": "Train - symbol of our logistics network",
+        "text1": "We strive to become your reliable logistics partner by offering innovative solutions that help your business grow and reach new heights. Our goal is to provide high-quality services, efficiency, and a personalized approach to each client.",
+        "text2": "We continuously improve our processes, implement new technologies, and expand our service geography to stay one step ahead and offer the best solutions for your business."
+    },
+    "aboutUs": {
+        "title": "About Us",
+        "imageAlt": "GlobalLogistics company",
+        "text1": "GlobalLogistics is a trusted partner in multimodal freight transportation. We offer comprehensive logistics solutions that help our clients optimize costs, reduce delivery times, and ensure cargo safety at all stages of transportation.",
+        "text2": "Our company was founded in 2010, and since then we have established ourselves as logistics professionals. We work with clients from various industries, including manufacturing, retail, e-commerce, and more. Our experience allows us to solve even the most complex cargo transportation challenges."
+    },
+    "values": {
+        "title": "Our Values",
+        "reliability": "Reliability",
+        "professionalism": "Professionalism",
+        "customerFocus": "Customer Focus",
+        "responsibility": "Responsibility"
+    }
+}

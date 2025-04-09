@@ -1,0 +1,36 @@
+{
+    "header": {
+        "companyName": "Company Name",
+        "menu": {
+            "about": "About Us",
+            "request": "Place an Order",
+            "contact": "Contacts"
+        },
+        "phone": "+1 (234) 567-890",
+        "burgerLabel": "Open menu"
+    },
+    "footer": {
+        "companyName": "Company Name",
+        "links": {
+            "privacy": "Privacy Policy",
+            "offer": "Public Offer"
+        },
+        "phones": [
+            "+380 123 456 789",
+            "+380 987 654 321"
+        ],
+        "email": "info@company.com",
+        "copyright": "© 2023 Company Name. All rights reserved."
+    },
+    "contacts": {
+        "title": "Contacts",
+        "phonesTitle": "Phone numbers",
+        "phones": [
+            "+1 (123) 456-7890",
+            "+1 (987) 654-3210"
+        ],
+        "emailTitle": "Email",
+        "email": "info@ourcontinent.com",
+        "socialsTitle": "Social media"
+    }
+}

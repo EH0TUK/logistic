@@ -1,0 +1,36 @@
+{
+    "header": {
+        "companyName": "Название компании",
+        "menu": {
+            "about": "О нас",
+            "request": "Оставить заявку",
+            "contact": "Контакты"
+        },
+        "phone": "+1 (234) 567-890",
+        "burgerLabel": "Открыть меню"
+    },
+    "footer": {
+        "companyName": "Название компании",
+        "links": {
+            "privacy": "Политика конфиденциальности",
+            "offer": "Публичная оферта"
+        },
+        "phones": [
+            "+380 123 456 789",
+            "+380 987 654 321"
+        ],
+        "email": "info@company.com",
+        "copyright": "© 2023 Название компании. Все права защищены."
+    },
+    "contacts": {
+        "title": "Контакты",
+        "phonesTitle": "Телефоны",
+        "phones": [
+            "+375 (29) 123-45-67",
+            "+375 (33) 987-65-43"
+        ],
+        "emailTitle": "Email",
+        "email": "info@ourcontinent.com",
+        "socialsTitle": "Социальные сети"
+    }
+}

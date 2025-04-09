@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/EH0TUK/logistic/static/css/main.46849af3.css",
+    "main.js": "/EH0TUK/logistic/static/js/main.c285e020.js",
+    "static/media/background.jpg": "/EH0TUK/logistic/static/media/background.c104e3920cf26be49ad6.jpg",
+    "static/media/train-1.jpg": "/EH0TUK/logistic/static/media/train-1.e3e5a2e38b62d405edb3.jpg",
+    "static/media/team-member-2.jpg": "/EH0TUK/logistic/static/media/team-member-2.ed9b2d431bc975675517.jpg",
+    "static/media/team-member-4.jpg": "/EH0TUK/logistic/static/media/team-member-4.c47ff6f551d0e665eb9b.jpg",
+    "static/media/loader.jpg": "/EH0TUK/logistic/static/media/loader.5a754af1f28a023b3f02.jpg",
+    "static/media/team-member-6.jpg": "/EH0TUK/logistic/static/media/team-member-6.4c2dbebac5b536991271.jpg",
+    "static/media/team-member-5.jpg": "/EH0TUK/logistic/static/media/team-member-5.0aa5367b98c6dd0f0e67.jpg",
+    "static/media/Gilroy-Medium.woff": "/EH0TUK/logistic/static/media/Gilroy-Medium.45d1838b05540441a85e.woff",
+    "static/media/Gilroy-Bold.woff": "/EH0TUK/logistic/static/media/Gilroy-Bold.3debda75a955166ad11d.woff",
+    "static/media/Gilroy-Semibold.woff": "/EH0TUK/logistic/static/media/Gilroy-Semibold.32bd613f2871314e7ce5.woff",
+    "static/media/Gilroy-Regular.woff": "/EH0TUK/logistic/static/media/Gilroy-Regular.0c2128184d1b52ccc8b4.woff",
+    "static/media/team-member-1.jpg": "/EH0TUK/logistic/static/media/team-member-1.f90ab116d33a18f9d1a1.jpg",
+    "static/media/team-member-3.jpg": "/EH0TUK/logistic/static/media/team-member-3.e663da3b153202c84489.jpg",
+    "static/media/team-member-7.jpg": "/EH0TUK/logistic/static/media/team-member-7.d074171dd483416f9912.jpg",
+    "static/media/Gilroy-Medium.woff2": "/EH0TUK/logistic/static/media/Gilroy-Medium.8ae21435f000d4c5fff5.woff2",
+    "static/media/Gilroy-Bold.woff2": "/EH0TUK/logistic/static/media/Gilroy-Bold.99b839f80f059aa7c78e.woff2",
+    "static/media/Gilroy-Semibold.woff2": "/EH0TUK/logistic/static/media/Gilroy-Semibold.fa811048b0aab7db1164.woff2",
+    "static/media/Gilroy-Regular.woff2": "/EH0TUK/logistic/static/media/Gilroy-Regular.71de762886572b308b58.woff2",
+    "static/media/ship.svg": "/EH0TUK/logistic/static/media/ship.0b204e5401c6ea942ae9cf0484dd4ef0.svg",
+    "index.html": "/EH0TUK/logistic/index.html",
+    "static/media/train.svg": "/EH0TUK/logistic/static/media/train.1691c6d15ffcb7043ec70b72b92e87b4.svg",
+    "static/media/truck.svg": "/EH0TUK/logistic/static/media/truck.58c2b867ee7b3bc6dcfd3bbc5ebc0380.svg",
+    "static/media/whatsapp.svg": "/EH0TUK/logistic/static/media/whatsapp.00e63db35ac889166019212511a761df.svg",
+    "static/media/telegram.svg": "/EH0TUK/logistic/static/media/telegram.57deb5554fa16084fcb14a0a7617a465.svg",
+    "static/media/getFetch.cjs": "/EH0TUK/logistic/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "static/media/triangle-icon.svg": "/EH0TUK/logistic/static/media/triangle-icon.bb4baf40925ba9c457b44b85d012138e.svg",
+    "main.46849af3.css.map": "/EH0TUK/logistic/static/css/main.46849af3.css.map",
+    "main.c285e020.js.map": "/EH0TUK/logistic/static/js/main.c285e020.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46849af3.css",
+    "static/js/main.c285e020.js"
+  ]
+}
