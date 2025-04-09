@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/layout/header/Header';
 import Footer from './components/layout/footer/Footer';
 import Home from './pages/Home/Home';
@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/logistic">
       <div className="app-wrapper">
         <LanguageManager />
         <Header />
@@ -45,6 +45,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/public-offer" element={<PublicOffer />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
         <Footer />

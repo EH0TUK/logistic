@@ -10,10 +10,10 @@ i18n
     .init({
         fallbackLng: 'ru',
         debug: false,
-        ns: ['home', 'about', 'common', 'contact'], // Указываем пространства имен
-        defaultNS: 'common',    // Пространство имен по умолчанию
+        ns: ['home', 'about', 'common', 'contact'],
+        defaultNS: 'common',
         backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.json', // Путь к файлам
+            loadPath: `${process.env.PUBLIC_URL}/locales/{{lng}}/{{ns}}.json`,
         },
         detection: {
             order: ['localStorage', 'navigator'],

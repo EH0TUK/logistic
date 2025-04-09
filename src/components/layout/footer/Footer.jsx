@@ -28,11 +28,13 @@ const Footer = () => {
           </nav>
         </div>
         <div className="footer__column">
-          {t('footer.phones', { returnObjects: true }).map((phone, index) => (
-            <a key={index} href={`tel:${phone.replace(/\D/g, '')}`} className="footer__phone">
-              {phone}
-            </a>
-          ))}
+          {Array.isArray(t('footer.phones', { returnObjects: true })) &&
+            t('footer.phones', { returnObjects: true }).map((phone, index) => (
+              <a key={index} href={`tel:${phone.replace(/\D/g, '')}`} className="footer__phone">
+                {phone}
+              </a>
+            ))
+          }
         </div>
         <div className="footer__column">
           <a href={`mailto:${t('footer.email')}`} className="footer__email">

@@ -56,6 +56,16 @@
   <title>[Название компании] - Мультимодальные перевозки грузов</title>
 </head>
 
+<script>
+  (function () {
+    const redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
+
 <body>
   <div id="loading-screen" style="
     position: fixed;
