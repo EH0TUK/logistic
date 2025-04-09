@@ -17,17 +17,17 @@ const WhyChooseUs = () => {
 
     return (
         <section className="why-choose-us" aria-labelledby="why-choose-us-title">
-            <h2 id="why-choose-us-title" className="why-choose-us__title">{t('whyChooseUs.title')}</h2>
+            <h2 id="why-choose-us-title" className="why-choose-us__title title">{t('whyChooseUs.title')}</h2>
             <ul className="why-choose-us__list">
                 {itemKeys.map((key, index) => (
                     <li key={key} className="why-choose-us__item">
                         <button
-                            className={`why-choose-us__item-header ${openIndex === index ? 'why-choose-us__item-header--open' : ''}`}
+                            className="why-choose-us__item-header"
                             onClick={() => toggleDescription(index)}
                             aria-expanded={openIndex === index}
                             aria-controls={`why-choose-us-${index}`}
                         >
-                            <span className="why-choose-us__item-title">
+                            <span className="why-choose-us__item-title subtitle">
                                 {whyChooseUsData[key].title}
                             </span>
                             <span
@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
                         </button>
                         <div
                             id={`why-choose-us-${index}`}
-                            className={`why-choose-us__item-description ${openIndex === index ? 'why-choose-us__item-description--open' : ''}`}
+                            className={`why-choose-us__item-description text ${openIndex === index ? 'why-choose-us__item-description--open' : ''}`}
                             aria-hidden={openIndex !== index}
                         >
                             <p>{whyChooseUsData[key].description}</p>

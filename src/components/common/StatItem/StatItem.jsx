@@ -60,7 +60,7 @@ const StatItem = ({ number, text }) => {
             className={`stat-item ${isVisible ? 'stat-item--visible' : ''}`} // Добавляем класс при видимости
             ref={statRef}
         >
-            <span className="stat-item__number">
+            <span className="stat-item__number title">
                 &nbsp;&nbsp;{count}+
             </span>
             <div className="stat-item__line"></div>

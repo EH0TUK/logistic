@@ -8,23 +8,27 @@ const AboutUs = () => {
 
     return (
         <section className="about-us" aria-labelledby="about-title">
-            <h1 id="about-title" className="about-us__title">{t('aboutUs.title')}</h1>
-            <div className="about-us__container">
-                <div className="about-us__content">
-                    <p className="about-us__text">
-                        {t('aboutUs.text1')}
-                    </p>
-                    <p className="about-us__text">
-                        {t('aboutUs.text2')}
-                    </p>
-                </div>
-                <div className="about-us__image-wrapper">
-                    <img
-                        src={aboutUsImage}
-                        alt={t('aboutUs.imageAlt')}
-                        className="about-us__image"
-                        loading="lazy"
-                    />
+            <div className="about-us__wrapper">
+                <h1 id="about-title" className="about-us__title title">{t('aboutUs.title')}</h1>
+                <div className="about-us__container">
+                    <div className="about-us__content">
+                        <div className="about-us__text-group">
+                            <p className="about-us__text text">
+                                {t('aboutUs.text1')}
+                            </p>
+                            <p className="about-us__text text">
+                                {t('aboutUs.text2')}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="about-us__image-wrapper">
+                        <img
+                            src={aboutUsImage}
+                            alt={t('aboutUs.imageAlt')}
+                            className="about-us__image"
+                            loading="lazy"
+                        />
+                    </div>
                 </div>
             </div>
         </section>

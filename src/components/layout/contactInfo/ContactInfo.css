@@ -1,30 +1,19 @@
-.contact-info {}
-
-.contact-title {
-    font-size: 36px;
-    font-weight: 600;
-    color: #F2D4B7;
-    margin-bottom: 30px;
-}
-
 .offices-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Фиксировано 2 колонки */
     gap: 25px;
 }
 
 .office-card {
-    background: #ffffff;
+    background-color: var(--color-background-card-l);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .office-name {
-    font-size: 1.3rem;
     margin-bottom: 15px;
-    color: #000;
 }
 
 .contact-row {
@@ -36,27 +25,26 @@
 .label {
     font-weight: 600;
     min-width: 120px;
-    color: #34495e;
+    color: var(--color-subtitle-hover);
 }
 
 .value {
-    color: #2c3e50;
+    color: var(--color-text);
 }
 
 .weekend-hours {
-    color: #7f8c8d;
+    color: var(--color-text-light-gray);
 }
 
 .office-description {
     margin-top: 15px;
-    color: #555;
+    color: var(--color-text-light-gray);
     font-style: italic;
 }
 
 @media (max-width: 768px) {
     .offices-grid {
         grid-template-columns: 1fr;
-        /* Одна колонка на мобильных устройствах */
     }
 
     .contact-row {

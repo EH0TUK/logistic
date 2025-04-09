@@ -1,8 +1,5 @@
 .contact {
     flex-grow: 1;
-    /* Занимает всё доступное пространство внутри родительского flex-контейнера */
     padding-top: 100px;
-    background-color: #0e0e0e;
-    /* Пример фона */
     width: 100%;
 }

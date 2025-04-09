@@ -1,6 +1,4 @@
-/* Основные стили для header */
 .header {
-  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,9 +8,17 @@
   transition: background-color 0.3s ease;
 }
 
-.header--scrolled {
-  background-color: #0e0e0e;
-  /* Полностью чёрный фон при скролле */
+.header {
+  background-color: transparent;
+}
+
+.home-page.header:not(.header--scrolled) {
+  background-color: transparent;
+}
+
+.header--scrolled,
+:not(.home-page) .header {
+  background-color: var(--color-background-log);
 }
 
 .header__container {
@@ -23,11 +29,22 @@
 }
 
 .header__logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  /* Всегда белый цвет текста */
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-logo);
+  height: 100%;
+  font-weight: 600;
+  text-align: right;
+}
+
+.header__logo p:first-child {
+  font-size: 30px;
+}
+
+.header__logo p:last-child {
+  font-size: 20px;
+  color: var(--color-text-hover);
 }
 
 /* Навигация */
@@ -50,25 +67,25 @@
 .header__nav-link {
   text-decoration: none;
   color: white;
-  /* Всегда белый цвет текста */
   font-size: 1rem;
   position: relative;
   transition: color 0.3s ease;
 }
 
-.header__nav-link:hover::after {
+.header__nav-link::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -5px;
-  width: 100%;
+  width: 0;
   height: 2px;
-  background-color: #F2D4B7;
-  /* Цвет линии */
+  background-color: var(--color-text-hover);
   border-radius: 2px;
-  /* Скругление линии */
-  transition: all 0.3s ease;
-  /* Плавность анимации */
+  transition: width 0.3s ease;
+}
+
+.header__nav-link:hover::after {
+  width: 100%;
 }
 
 /* Контакты */
@@ -92,7 +109,7 @@
 }
 
 .header__phone:hover {
-  color: #F2D4B7;
+  color: var(--color-text-hover);
   /* Цвет при наведении */
 }
 
@@ -107,30 +124,38 @@
   margin-left: 0.5rem;
 }
 
-.header__social-icon {
+.header__social-svg {
   width: 24px;
   height: 24px;
-  transition: opacity 0.3s ease;
+  display: inline-block;
+  background-color: currentColor;
+  mask-image: var(--svg-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: var(--svg-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  transition: all 0.3s ease;
+  color: white;
 }
 
-.header__social-icon:hover {
-  opacity: 0.8;
-  /* Лёгкое затемнение при наведении */
+.header__social-link:hover .header__social-svg {
+  color: var(--color-secondary);
 }
 
-/* Бургер-меню */
 .header__burger {
   display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
-  height: 24px;
+  height: 21px;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
   z-index: 1001;
-  /* Чтобы бургер был поверх меню */
 }
 
 .header__burger-line {
@@ -156,6 +181,10 @@
 
 /* Адаптивность */
 @media (max-width: 768px) {
+  .header__logo-image {
+    height: 30px;
+  }
+
   .header__burger {
     display: flex;
   }
@@ -163,24 +192,20 @@
   .header__nav {
     position: fixed;
     top: -100%;
-    /* Меню скрыто сверху */
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #0e0e0e;
-    /* Затемнение фона */
+    background-color: var(--color-background);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     transition: top 0.3s ease-in-out;
-    /* Анимация выезда сверху */
     z-index: 1000;
   }
 
   .header__nav--active {
     top: 0;
-    /* Меню открывается сверху */
   }
 
   .header__nav-list {
@@ -189,39 +214,43 @@
   }
 
   .header__nav-item {
-    margin: 1.5rem 0;
+    margin: 0 0 40px;
   }
 
   .header__nav-link {
-    color: #fff;
-    /* Белый цвет текста для меню */
-    font-size: 1.5rem;
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: var(--font-size-subtitle);
+  }
+
+  .header__phone {
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: var(--font-size-subtitle);
+    margin: 0 0 40px 0;
   }
 
   .header__contacts--desktop {
     display: none;
-    /* Скрываем контакты в десктопной версии на мобильных */
   }
 
   .header__contacts--mobile {
     display: flex;
-    /* Показываем контакты в мобильной версии */
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
   }
 
-  .header__contacts--mobile .header__phone {
-    margin-bottom: 1rem;
+  .header__social-list {
+    justify-content: space-between;
+    width: 140px;
   }
 
-  .header__contacts--mobile .header__social-list {
-    justify-content: center;
+  .header__social-item {
+    margin: 0;
   }
 
   .header__contacts--mobile .header__social-icon {
     width: 32px;
-    /* Увеличиваем размер иконок */
     height: 32px;
   }
 }

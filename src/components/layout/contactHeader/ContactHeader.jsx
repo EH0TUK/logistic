@@ -8,10 +8,10 @@ const ContactHeader = () => {
     return (
         <section className="contact-header">
             <div className="contact__wrapper">
-                <h1 className="contact-header__title">
+                <h1 className="contact-header__title title">
                     {t('header.title')}
                 </h1>
-                <p className="contact-header__description">
+                <p className="contact-header__description text">
                     {t('header.description')}
                 </p>
             </div>

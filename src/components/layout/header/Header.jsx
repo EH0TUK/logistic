@@ -2,18 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../common/LanguageSwitcher/LanguageSwitcher';
-import telegramIconWhite from '../../../assets/telegram-icon-white.png';
-import viberIconWhite from '../../../assets/viber-icon-white.png';
-import whatsappIconWhite from '../../../assets/whatsapp-icon-white.png';
-import telegramIconHover from '../../../assets/telegram-icon-beige.png';
-import viberIconHover from '../../../assets/viber-icon-beige.png';
-import whatsappIconHover from '../../../assets/whatsapp-icon-beige.png';
+import telegramIcon from '../../../assets/telegram.svg';
+import whatsAppIcon from '../../../assets/whatsapp.svg';
 import './Header.css';
 
 const Header = () => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -26,18 +21,28 @@ const Header = () => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
     return () => { document.body.style.overflow = 'auto'; };
   }, [isMenuOpen]);
+  const isHomePage = location.pathname === '/';
+  const [isScrolled, setIsScrolled] = useState(isHomePage ? false : true);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      if (isHomePage) {
+        setIsScrolled(window.scrollY > 50);
+      }
+    };
+
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
+    <header className={`header ${isHomePage ? 'home-page' : ''} ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="header__container wrapper">
         <Link to="/" className="header__logo">
-          {t('header.companyName')}
+          <p>TRANS</p>
+          <p>OFFER</p>
         </Link>
 
         <button
@@ -74,6 +79,7 @@ const Header = () => {
               {t('header.phone')}
             </a>
             <SocialIcons />
+            <LanguageSwitcher />
           </div>
         </nav>
 
@@ -93,34 +99,23 @@ const SocialIcons = () => (
   <ul className="header__social-list">
     <SocialIcon
       href="https://t.me/yourlink"
-      whiteIcon={telegramIconWhite}
-      hoverIcon={telegramIconHover}
+      icon={telegramIcon}
       alt="Telegram"
     />
     <SocialIcon
-      href="viber://chat?number=+1234567890"
-      whiteIcon={viberIconWhite}
-      hoverIcon={viberIconHover}
-      alt="Viber"
-    />
-    <SocialIcon
       href="https://wa.me/1234567890"
-      whiteIcon={whatsappIconWhite}
-      hoverIcon={whatsappIconHover}
+      icon={whatsAppIcon}
       alt="WhatsApp"
     />
   </ul>
 );
 
-const SocialIcon = ({ href, whiteIcon, hoverIcon, alt }) => (
+const SocialIcon = ({ href, icon, alt }) => (
   <li className="header__social-item">
     <a href={href} className="header__social-link" target="_blank" rel="noopener noreferrer" aria-label={alt}>
-      <img
-        src={whiteIcon}
-        alt={alt}
-        className="header__social-icon"
-        onMouseOver={(e) => (e.currentTarget.src = hoverIcon)}
-        onMouseOut={(e) => (e.currentTarget.src = whiteIcon)}
+      <div
+        className="header__social-icon header__social-svg"
+        style={{ '--svg-url': `url(${icon})` }}
       />
     </a>
   </li>

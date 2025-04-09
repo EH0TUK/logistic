@@ -8,7 +8,7 @@ const Mission = () => {
 
     return (
         <section className="mission" aria-labelledby="mission-title">
-            <h2 id="mission-title" className="mission__title">{t('mission.title')}</h2>
+            <h2 id="mission-title" className="mission__title title">{t('mission.title')}</h2>
             <div className="mission__container">
                 <div className="mission__image-wrapper">
                     <img
@@ -19,10 +19,10 @@ const Mission = () => {
                     />
                 </div>
                 <div className="mission__content">
-                    <p className="mission__text">
+                    <p className="mission__text text">
                         {t('mission.text1')}
                     </p>
-                    <p className="mission__text">
+                    <p className="mission__text text">
                         {t('mission.text2')}
                     </p>
                 </div>

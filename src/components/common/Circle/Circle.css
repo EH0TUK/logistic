@@ -5,37 +5,23 @@
     padding: 2rem;
 }
 
-/* Стили для плюса */
 .plus {
     position: absolute;
     top: 50%;
-    /* Позиционируем плюс по центру */
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Центрируем плюс */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Вертикальная линия плюса */
-.plus-line.vertical {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #F2D4B7;
-    /* Цвет плюса как у круга */
-    box-shadow: inset 4px 4px 4px -3px rgba(0, 0, 0, 0.3);
-    /* Тень только слева */
-}
-
+.plus-line.vertical,
 .plus-line.horizontal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #F2D4B7;
+    background-color: var(--color-primary);
     box-shadow: inset 4px 4px 4px -3px rgba(0, 0, 0, 0.3);
 }
 
@@ -46,7 +32,9 @@
     left: 32%;
     width: 37%;
     height: 100%;
-    background: #F2D4B7;
-    background: linear-gradient(315deg, rgba(242, 212, 183, 1) 80%, rgba(179, 158, 138, 1) 100%);
+    background: var(--color-primary);
+    background: linear-gradient(315deg,
+            var(--color-primary) 80%,
+            var(--color-secondary) 100%);
     z-index: 1;
 }

@@ -1,0 +1,79 @@
+.privacy-policy {
+    padding-top: 120px;
+}
+
+.policy-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-log-line);
+    padding-bottom: 1rem;
+}
+
+.intro-text {
+    font-size: var(--font-size-text);
+    line-height: 1.8;
+    color: var(--color-text-light-gray);
+}
+
+.policy-section {
+    margin: 2.5rem 0;
+}
+
+.section-content {
+    background: var(--color-background-card-l);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+.section-content__item {
+    padding-bottom: 10px;
+}
+.section-content__item:last-child {
+    padding-bottom: 0;
+}
+.section-content__subtitle {
+    padding-bottom: 20px;
+}
+.subtitle-small {
+    font-size: 1.2rem;
+    color: var(--color-subtitle);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.security-note {
+    background: var(--color-primary);
+    padding: 1rem;
+    border-left: 3px solid var(--color-secondary);
+}
+
+.contact-info {
+    font-weight: 600;
+    color: var(--color-secondary);
+    padding-top: 10px;
+}
+
+.policy-footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-text-light-gray);
+}
+
+/* Для нумерованных списков */
+ol {
+    counter-reset: item;
+    padding-left: 1.5rem;
+}
+
+ol li {
+    display: block;
+    position: relative;
+}
+
+ol li:before {
+    content: counters(item, ".") ".";
+    counter-increment: item;
+    position: absolute;
+    left: -1.5rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+}

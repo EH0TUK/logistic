@@ -1,22 +1,17 @@
 .company-info {
     color: white;
-    padding: 8rem 0 4rem 0;
+    margin: 60px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 0;
-}
-
-.company-info__wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .company-info__content {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .company-info__name {
@@ -26,15 +21,8 @@
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.company-info__title {
-    font-size: 3rem;
-    margin: 0;
-}
-
 .company-info__description {
     max-width: 65%;
-    font-size: 1.2rem;
-    line-height: 1.6;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -42,4 +30,17 @@
 
 .company-info__text {
     margin: 0;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .company-info__content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .company-info__name,
+    .company-info__description {
+        max-width: 100%;
+    }
 }

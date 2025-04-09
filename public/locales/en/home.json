@@ -35,14 +35,16 @@
             "name": "Your name",
             "phone": "Your phone number",
             "port": "Destination port",
-            "deliveryType": "Delivery type"
+            "deliveryType": "Delivery type",
+            "containerType": "Container type",
+            "customsClearance": "Customs clearance needed",
+            "deliveryTime": "Estimated delivery time"
         },
         "deliveryTypes": {
             "multimodal": "Multimodal",
             "road": "Road",
             "rail": "Railway",
-            "sea": "Sea",
-            "air": "Air delivery"
+            "sea": "Sea"
         },
         "placeholders": {
             "origin": "Example: Kazakhstan, Astana",
@@ -52,7 +54,10 @@
             "volume": "Example: 10 m3",
             "name": "John Doe",
             "phone": "+1 (___) ___-____",
-            "port": "Example: Hamburg port"
+            "port": "Example: Hamburg port",
+            "containerType": "Example: 20ft refrigerated",
+            "customsClearance": "Example: Yes/No",
+            "deliveryTime": "Example: 5-7 days"
         },
         "errors": {
             "required": "This field is required",
@@ -60,7 +65,8 @@
             "phoneShort": "Number is too short",
             "weightFormat": "Enter weight in kg (example: 1500kg)",
             "volumeFormat": "Enter volume in m³ (example: 10 m3)",
-            "portRequired": "Specify destination port"
+            "portRequired": "Specify destination port",
+            "deliveryFormat": "Enter time range (example: 5-7 days)"
         },
         "sending": "Sending...",
         "button": "Calculate shipment",

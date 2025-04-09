@@ -3,12 +3,10 @@
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid var(--color-background-log);
     border-radius: 5px;
-    /* Скругление 10px */
     background-color: transparent;
-    /* Прозрачный фон */
-    color: white;
+    color: var(--color-background-log);
     font-size: 16px;
     cursor: pointer;
     position: relative;
@@ -16,6 +14,7 @@
     transition: background-color 0.3s ease;
     max-height: 43px;
     min-width: 240px;
+    font-weight: 500;
 }
 
 .button::before {
@@ -24,29 +23,20 @@
     top: 50%;
     left: 50%;
     width: 0;
-    /* Начинаем с нулевой ширины */
     height: 0;
-    /* Начинаем с нулевой высоты */
     background-color: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
     border-radius: 5px;
-    /* Небольшое скругление */
     transition: all 0.5s ease;
-    /* Анимация всех свойств */
     z-index: 0;
     opacity: 0;
-    /* Начинаем полностью прозрачным */
 }
 
 .button:hover::before {
     width: 105%;
-    /* Заполняем всю ширину кнопки */
     height: 105%;
-    /* Заполняем всю высоту кнопки */
     border-radius: 5px;
-    /* Скругление как у кнопки */
     opacity: 1;
-    /* Делаем полностью видимым */
 }
 
 .button__text {
@@ -56,18 +46,14 @@
 
 .button__icon {
     margin-left: 10px;
-    position: relative;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+
 .button__icon-img {
     width: 16px;
-    /* Размер иконки */
     height: 16px;
-    /* Размер иконки */
-    object-fit: contain;
-    /* Чтобы иконка не искажалась */
+    filter: var(--icon-filter);
 }

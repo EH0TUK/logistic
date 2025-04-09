@@ -1,13 +1,13 @@
 .contacts-window {
   position: absolute;
-  right: 0px;
+  right: 20px;
   top: 100px;
-  width: 300px;
+  width: 290px;
   padding: 20px;
-  background-color: rgba(242, 212, 183, 0.2);
+  background-color: var(--color-background-card-l);
   backdrop-filter: blur(10px);
-  border-radius: 4px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   transform: translateY(-20px);
@@ -19,7 +19,6 @@
   transform: translateY(0);
 }
 
-/* Заголовок и линия на одном уровне */
 .contacts-window__header {
   display: flex;
   align-items: center;
@@ -30,52 +29,50 @@
 .contacts-window__line {
   width: 50px;
   height: 2px;
-  background-color: #f2d4b7;
+  background-color: var(--color-background-log);
   margin-bottom: 0;
-  /* Убираем отступ, так как заголовок и линия на одном уровне */
 }
 
 .contacts-window__title {
-  font-size: 28px;
-  font-weight: 600;
-  color: #f2d4b7;
-  margin-bottom: 0;
-  /* Убираем отступ, так как заголовок и линия на одном уровне */
+  margin: 0 0 0 10px !important;
 }
 
-/* Подзаголовки */
 .contacts-window__subtitle {
   font-size: 18px;
-  color: #fff;
+  color: var(--color-lang);
   margin-bottom: 15px;
 }
+.contacts-window__contacts-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
 
-/* Номера для связи */
 .contacts-window__contacts {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .contacts-window__info {
   display: block;
   margin-bottom: 10px;
   font-size: 16px;
-  color: white;
+  color: var(--color-lang);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
   font-weight: 600;
 }
 
 .contacts-window__info:hover {
-  color: #f2d4b7;
-  /* Цвет при наведении */
+  color: var(--color-text-hover);
 }
 
-/* Электронный адрес */
 .contacts-window__email {
   display: block;
   margin-bottom: 30px;
   font-size: 16px;
-  color: white;
+  color: var(--color-lang);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
   font-weight: 600;
@@ -83,31 +80,43 @@
 }
 
 .contacts-window__email:hover {
-  color: #f2d4b7;
-  /* Цвет при наведении */
+  color: var(--color-text-hover);
 }
 
-/* Иконки для связи на одном уровне */
 .contacts-window__socials {
   display: flex;
   gap: 15px;
 }
 
-.contacts-window__social-link {
+.contacts__social-svg {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: currentColor;
+  mask-image: var(--svg-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: var(--svg-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.contacts__social-link:hover .contacts__social-svg {
+  color: var(--color-secondary);
+}
+
+.contacts__social-list {
   display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: filter 0.3s ease-in-out;
-  margin-right: 10px;
-  /* Плавное изменение иконок */
+  justify-content: space-between;
+  width: 80px;
 }
 
-.contacts-window__social-link:hover {
-  filter: brightness(0.8);
-  /* Изменение яркости при наведении */
-}
-
-.contacts-window__social-icon {
-  width: 28px;
-  height: 28px;
+.contacts__social-link {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
 }

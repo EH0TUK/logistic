@@ -20,11 +20,11 @@ const ContactInfo = () => {
 
   return (
     <section className="contact-info">
-      <h2 className="contact-title">{t('offices.title')}</h2>
+      <h2 className="contact-title title">{t('offices.title')}</h2>
       <div className="offices-grid">
         {offices.map((office, index) => (
           <div key={index} className="office-card">
-            <h3 className="office-name">{office.name}</h3>
+            <h3 className="office-name subtitle">{office.name}</h3>
             
             {office.address && (
               <div className="contact-row">

@@ -1,9 +1,6 @@
 .delivery-calculator {
-    color: white;
     width: 100%;
-    position: relative;
     font-weight: 500;
-    padding-bottom: 50px;
 }
 
 .delivery-calculator__content {
@@ -21,7 +18,7 @@
 .delivery-calculator__title h2 {
     font-size: 36px;
     font-weight: 700;
-    color: white;
+    color: var(--color-title);
 }
 
 .delivery-calculator__title {
@@ -29,9 +26,9 @@
 }
 
 .delivery-calculator__description {
-    font-size: 16px;
     margin-bottom: 40px;
-    color: white;
+    color: var(--color-subtitle);
+    font-size: var(--font-size-text);
 }
 
 .delivery-calculator__form {
@@ -50,9 +47,9 @@
 
 .delivery-calculator__label {
     display: block;
-    font-size: 16px;
+    font-size: var(--font-size-text);
     margin-bottom: 8px;
-    color: white;
+    color: var(--color-title);
 }
 
 .delivery-calculator__input {
@@ -61,24 +58,24 @@
     margin-bottom: 5px;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 6px;
-    background-color: #fff;
-    color: #050505;
+    background-color: var(--color-background-card);
+    color: var(--color-text);
     font-size: 16px;
     transition: border-color 0.3s ease;
 }
 
 .delivery-calculator__input:focus {
-    border-color: #007bff;
+    border-color: var(--color-background-log);
     outline: none;
 }
 
 .delivery-calculator__input::placeholder {
-    color: #999;
+    color: var(--color-text-light-gray);
     opacity: 1;
 }
 
 .delivery-calculator__input.invalid {
-    border-color: #ff6b6b;
+    border-color: var(--color-error);
 }
 
 .delivery-calculator__input select {
@@ -98,29 +95,10 @@
     width: 100%;
 }
 
-.delivery-calculator__button {
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.delivery-calculator__button:hover {
-    background-color: #0056b3;
-}
-
-.delivery-calculator__button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
 .delivery-calculator__note {
     margin-left: 15px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-mobile-text);
+    color: var(--color-text);
 }
 
 .delivery-calculator__error {
@@ -173,6 +151,31 @@
     outline: none;
 }
 
+.delivery-calculator__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery-calculator__wrapper {
+    width: 100%;
+}
+
+/* Версия с контактами */
+.delivery-calculator__content.with-contacts .delivery-calculator__wrapper {
+    width: 65%;
+}
+
+.delivery-calculator__content.with-contacts .contacts-container {
+    width: 28%;
+    margin-left: 2%;
+}
+
+/* Полноразмерная версия без контактов */
+.delivery-calculator__content.full-width .delivery-calculator__wrapper {
+    width: 100%;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -182,6 +185,31 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 920px) {
+    .delivery-calculator__content {
+        flex-direction: column;
+    }
+
+    .delivery-calculator__content.with-contacts .delivery-calculator__wrapper,
+    .delivery-calculator__content.with-contacts .contacts-container,
+    .delivery-calculator__content.full-width .delivery-calculator__wrapper {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    /* Важное изменение - скрываем контакты на мобильных */
+    .delivery-calculator__content.with-contacts .contacts-container {
+        display: none !important;
+    }
+}
+
+/* Дополнительные улучшения для формы */
+@media (min-width: 921px) {
+    .delivery-calculator__form-column {
+        width: 48%;
     }
 }
 

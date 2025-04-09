@@ -1,0 +1,58 @@
+{
+    "title": "TransOffer Privacy Policy",
+    "intro": "This Privacy Policy governs the processing of customer data by LLC «TransOffer» (Tax ID XXXXXXXX) in relation to multimodal transportation services.",
+    "sections": {
+        "dataCollection": {
+            "title": "1. Data We Collect",
+            "items": [
+                "Contact details: full name, phone number, email, address",
+                "Cargo specifications: type, weight, dimensions, value, HS code",
+                "Documents: invoices, packing lists, certificates",
+                "Technical data: IP addresses, cookies, request history",
+                "Shipment details: routes, customs checkpoints, timelines"
+            ]
+        },
+        "dataProcessing": {
+            "title": "2. Data Processing",
+            "content": "Data is processed for:",
+            "items": [
+                "Calculating logistics solutions and costs",
+                "Customs clearance and documentation",
+                "Cargo tracking during transit",
+                "Accounting and tax reporting",
+                "Service improvement (anonymized data only)"
+            ]
+        },
+        "dataSharing": {
+            "title": "3. Data Disclosure",
+            "partners": "Data may be shared with:",
+            "partnerItems": [
+                "Carriers (road, rail, maritime)",
+                "Customs brokers",
+                "Insurance providers",
+                "Government authorities (Customs, Regulatory Agencies)"
+            ]
+        },
+        "rights": {
+            "title": "4. Your Rights",
+            "items": [
+                "Access to your data",
+                "Rectification of inaccuracies",
+                "Erasure (where applicable)",
+                "Processing restrictions",
+                "Data portability",
+                "Withdrawal of consent"
+            ],
+            "contact": "Submit requests to dpo@transoffer.com"
+        },
+        "security": {
+            "title": "5. Security Measures",
+            "measures": [
+                "TLS 1.3 encryption",
+                "ISO 27001 certification",
+                "Regular security audits"
+            ]
+        },
+        "updates": "Last Updated: 06/15/2024 | Version 2.1"
+    }
+}

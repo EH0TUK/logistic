@@ -1,5 +1,4 @@
 .about-page {
-    color: #fff;
-    background-color: #181818;
+    color: var(--color-light);
     padding-top: 80px;
 }

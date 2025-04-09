@@ -41,7 +41,7 @@ const CompanyAdvantages = () => {
                             'top-left', 'top-right', 'bottom-left', 'bottom-right'
                         ][index]}`}
                     >
-                        <div className="company-advantages__text">
+                        <div className="company-advantages__text text">
                             <p>{text}</p>
                         </div>
                     </div>

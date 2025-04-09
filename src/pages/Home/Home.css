@@ -4,20 +4,11 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #0e0e0e;
 }
 
 @media (max-width: 480px) {
   .hero {
     background-position: 20% center;
-  }
-
-  .text-block h1 {
-    font-size: 2rem;
-  }
-
-  .text-block p {
-    font-size: 1rem;
   }
 
   .info-blocks .info-block:nth-child(3) {
@@ -30,13 +21,5 @@
 
   .info-blocks .info-block:nth-child(2) {
     transform: translateX(100%);
-  }
-
-  .company-name h2 {
-    font-size: 2rem;
-  }
-
-  .company-description {
-    font-size: 1rem;
   }
 }

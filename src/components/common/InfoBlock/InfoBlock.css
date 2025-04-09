@@ -3,15 +3,32 @@
     align-items: center;
     max-width: 33.33%;
 }
+
 .info-block:first-child {
     margin-right: 20px;
 }
+
 .info-block:last-child {
     margin-left: 20px;
 }
+
 .info-block__image {
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    color: var(--color-text-hover);
+}
+
+.info-block__svg-image {
+    background-color: currentColor;
+    mask-image: var(--svg-url);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: var(--svg-url);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
 }
 
 .info-block__text {

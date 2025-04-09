@@ -41,10 +41,10 @@ const CompanyInfo = () => {
             <div className="company-info__wrapper wrapper">
                 <div className="company-info__content">
                     <div className="company-info__name" ref={companyNameRef}>
-                        <h2 className="company-info__title">{t('companyInfo.title')}</h2>
+                        <h2 className="company-info__title title">{t('companyInfo.title')}</h2>
                     </div>
                     <div className="company-info__description" ref={companyDescriptionRef}>
-                        <p className="company-info__text">
+                        <p className="company-info__text text">
                             {t('companyInfo.description')}
                         </p>
                     </div>

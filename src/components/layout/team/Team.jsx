@@ -31,8 +31,8 @@ const Team = () => {
 
     return (
         <section className="team" aria-labelledby="team-title">
-            <h2 id="team-title" className="team__title">{teamData.title}</h2>
-            <p className="team__description">{teamData.description}</p>
+            <h2 id="team-title" className="team__title title">{teamData.title}</h2>
+            <p className="team__description text">{teamData.description}</p>
 
             <div className="team__swiper">
                 <Swiper
@@ -40,9 +40,18 @@ const Team = () => {
                     spaceBetween={30}
                     slidesPerView={3}
                     breakpoints={{
-                        0: { slidesPerView: 1 },
-                        540: { slidesPerView: 2 },
-                        1024: { slidesPerView: 3 }
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 20
+                        },
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 25
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        }
                     }}
                     aria-label="Team members"
                 >
@@ -55,7 +64,7 @@ const Team = () => {
                                     className="team__card-image"
                                     loading="lazy"
                                 />
-                                <h3 className="team__card-name">{member.name}</h3>
+                                <h3 className="team__card-name subtitle">{member.name}</h3>
                                 <p className="team__card-position">{member.position}</p>
                                 <p className="team__card-description">{member.description}</p>
                             </div>

@@ -45,32 +45,16 @@
         ]
     },
     "additionalSections": {
-        "socials": {
-            "title": "Соцсети",
-            "items": [
-                {
-                    "name": "LinkedIn",
-                    "url": "https://linkedin.com/company/your-company",
-                    "icon": "linkedin"
-                },
-                {
-                    "name": "Facebook",
-                    "url": "https://facebook.com/your-company",
-                    "icon": "facebook"
-                },
-                {
-                    "name": "Telegram",
-                    "url": "https://t.me/your-company",
-                    "icon": "telegram"
-                }
-            ]
-        },
         "requisites": {
             "title": "Реквизиты",
             "items": [
                 {
                     "label": "Юр. название",
                     "value": "ООО 'Логистик Солюшнс'"
+                },
+                {
+                    "label": "Юр. адрес",
+                    "value": "ул. Логистическая, 123, Москва, Россия"
                 },
                 {
                     "label": "ИНН",

@@ -31,14 +31,69 @@
 }
 
 :root {
-    --primary-color: #F2D4B7;
-    --secondary-color: #181818;
-    --text-light: #fff;
-    --font-title: 36px;
-    --font-text: 18px;
-    --mobile-title: 2rem;
-    --mobile-text: 1rem;
+    --color-background: #D1D9E2;
+    --color-background-log: #37587F;
+    --color-background-card: #aab6c4;
+    --color-title: #37587F;
+    --color-subtitle: #222222;
+    --color-subtitle-hover: #37587F;
+    --color-text: #222222;
+    --color-text-banner: #fff;
+    --color-text-gray: #333333;
+    --color-text-light-gray: #555555;
+    --color-log-line: #aab6c4;
+    --color-log-text: #D1D9E2;
+    --color-text-hover: #A68147;
+    --color-logo: #FFF7EB;
+    --color-error: #ff6b6b;
+    --color-background-card: #fff;
+    --color-background-card-l: #37577f3f;
+    --scrollbar-track: #D1D9E2;
+    --scrollbar-thumb: #aab6c4;
+    --scrollbar-thumb-hover: #fff;
+    --color-lang: #fff;
+    --color-lang-hover: #A68147;
+
+    --color-primary: #FFF1DA;
+    --color-secondary: #A68147;
+
+    --font-size-title: 2.2rem;
+    --font-size-subtitle: 1.7rem;
+    --font-size-title-card: 1.5rem;
+    --font-size-text: 1.1rem;
+    --font-size-mobile-title: 2rem;
+    --font-size-mobile-text: 1rem;
+
+    --icon-filter: brightness(0) saturate(100%) invert(22%) sepia(39%) saturate(1204%) hue-rotate(178deg) brightness(91%) contrast(91%);
 }
+
+.title {
+    font-size: var(--font-size-title);
+    color: var(--color-title);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: var(--font-size-subtitle);
+    color: var(--color-subtitle);
+    font-weight: 600;
+}
+
+.title-card {
+    font-size: var(--font-size-title-card);
+    color: var(--color-subtitle-hover);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.text {
+    font-size: var(--font-size-text);
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
 
 * {
     padding: 0;
@@ -72,7 +127,7 @@ aside {
 input,
 button,
 textarea {
-    font-family: inherit;
+    font-family: 'gilroy';
 }
 
 input::-ms-clear {
@@ -129,6 +184,8 @@ html {
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    background-color: var(--color-background);
+    scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -145,14 +202,63 @@ html {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Минимальная высота — вся высота viewport */
 }
 
 .app-content {
     flex-grow: 1;
-    /* Занимает всё доступное пространство */
     display: flex;
-    /* Делаем flex-контейнером */
     flex-direction: column;
-    /* Располагаем дочерние элементы вертикально */
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track, #f5f5f5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb, #c1c1c1);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover, #a8a8a8);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb, #c1c1c1) var(--scrollbar-track, #f5f5f5);
+}
+
+@media (max-width: 1200px) {
+    .wrapper {
+        padding: 0 calc(10px + (20 - 10) * ((100vw - 300px) / (1200 - 300)));
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: var(--font-size-mobile-title);
+        margin-bottom: 15px;
+        overflow-wrap: break-word;
+        /* Переносит длинные слова */
+        word-break: normal;
+        /* Стандартное поведение */
+    }
+
+    .text {
+        font-size: var(--font-size-mobile-text);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }

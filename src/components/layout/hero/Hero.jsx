@@ -45,7 +45,7 @@ const Hero = () => {
                             <p className="hero__description">{t('hero.description')}</p>
                         </div>
                         <div className="hero__button-container" ref={buttonRef}>
-                            <Button text={t('hero.button')} />
+                            <Button text={t('hero.button')} targetId="target-section" />
                         </div>
                     </div>
                 </div>

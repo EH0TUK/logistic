@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import InfoBlock from '../../common/InfoBlock/InfoBlock';
-import Truck from '../../../assets/truck.png';
-import HeavyTruck from '../../../assets/heavy-truck.png';
-import Train from '../../../assets/train.png';
+import Truck from '../../../assets/truck.svg';
+import Ship from '../../../assets/ship.svg';
+import Train from '../../../assets/train.svg';
 import './InfoBlocks.css';
 import { useTranslation } from 'react-i18next';
 
@@ -11,6 +11,8 @@ const InfoBlocks = () => {
     const { t } = useTranslation('home');
 
     useEffect(() => {
+        const isMobile = window.innerWidth <= 768;
+
         setTimeout(() => {
             if (infoBlocksRef.current[0]) {
                 infoBlocksRef.current[0].style.opacity = '1';
@@ -18,8 +20,9 @@ const InfoBlocks = () => {
             }
         }, 800);
 
+        // Анимируем второй блок только если это не мобильная версия
         setTimeout(() => {
-            if (infoBlocksRef.current[1]) {
+            if (infoBlocksRef.current[1] && !isMobile) {
                 infoBlocksRef.current[1].style.opacity = '1';
                 infoBlocksRef.current[1].style.transform = 'translateY(0)';
             }
@@ -30,7 +33,7 @@ const InfoBlocks = () => {
                 infoBlocksRef.current[2].style.opacity = '1';
                 infoBlocksRef.current[2].style.transform = 'translateX(0)';
             }
-        }, 1200);
+        }, isMobile ? 1000 : 1200); // Корректируем задержку для мобильных
     }, []);
 
     return (
@@ -43,7 +46,7 @@ const InfoBlocks = () => {
             />
             <InfoBlock
                 ref={(el) => (infoBlocksRef.current[1] = el)}
-                image={HeavyTruck}
+                image={Ship}
                 text={t('infoBlocks.heavyTruck')}
                 className="info-blocks__block info-blocks__block--second"
             />

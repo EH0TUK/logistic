@@ -1,10 +1,26 @@
 .company-stats {
     width: 100%;
-    padding: 20px 0 100px;
+    padding-bottom: 40px;
 }
 
-.compaty-stats__container {
+.company-stats__container {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    width: 100%;
+}
+
+@media (max-width: 580px) {
+    .company-stats__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .company-stats__container> :nth-child(even) .stat-item {
+        align-items: flex-end;
+        text-align: right;
+    }
 }

@@ -1,3 +1,4 @@
+// Values.jsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Values.css';
@@ -9,46 +10,28 @@ import responsibilityIcon from '../../../assets/responsibility-icon-dark.png';
 const Values = () => {
     const { t } = useTranslation('about');
 
+    const values = [
+        { icon: reliabilityIcon, text: t('values.reliability') },
+        { icon: professionalismIcon, text: t('values.professionalism') },
+        { icon: customerFocusIcon, text: t('values.customerFocus') },
+        { icon: responsibilityIcon, text: t('values.responsibility') }
+    ];
+
     return (
         <section className="values" aria-labelledby="values-title">
-            <h2 id="values-title" className="values__title">{t('values.title')}</h2>
+            <h2 id="values-title" className="values__title title">{t('values.title')}</h2>
             <ul className="values__list">
-                <li className="values__item">
-                    <img
-                        src={reliabilityIcon}
-                        alt={t('values.reliability')}
-                        className="values__icon"
-                        loading="lazy"
-                    />
-                    <span>{t('values.reliability')}</span>
-                </li>
-                <li className="values__item">
-                    <img
-                        src={professionalismIcon}
-                        alt={t('values.professionalism')}
-                        className="values__icon"
-                        loading="lazy"
-                    />
-                    <span>{t('values.professionalism')}</span>
-                </li>
-                <li className="values__item">
-                    <img
-                        src={customerFocusIcon}
-                        alt={t('values.customerFocus')}
-                        className="values__icon"
-                        loading="lazy"
-                    />
-                    <span>{t('values.customerFocus')}</span>
-                </li>
-                <li className="values__item">
-                    <img
-                        src={responsibilityIcon}
-                        alt={t('values.responsibility')}
-                        className="values__icon"
-                        loading="lazy"
-                    />
-                    <span>{t('values.responsibility')}</span>
-                </li>
+                {values.map((value, index) => (
+                    <li key={index} className="values__item">
+                        <img
+                            src={value.icon}
+                            alt={value.text}
+                            className="values__icon"
+                            loading="lazy"
+                        />
+                        <span>{value.text}</span>
+                    </li>
+                ))}
             </ul>
         </section>
     );
