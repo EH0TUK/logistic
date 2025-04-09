@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/EH0TUK/logistic/static/css/main.46849af3.css",
-    "main.js": "/EH0TUK/logistic/static/js/main.c285e020.js",
+    "main.js": "/EH0TUK/logistic/static/js/main.7dfb6e43.js",
     "static/media/background.jpg": "/EH0TUK/logistic/static/media/background.c104e3920cf26be49ad6.jpg",
     "static/media/train-1.jpg": "/EH0TUK/logistic/static/media/train-1.e3e5a2e38b62d405edb3.jpg",
     "static/media/team-member-2.jpg": "/EH0TUK/logistic/static/media/team-member-2.ed9b2d431bc975675517.jpg",
@@ -23,16 +23,16 @@
     "static/media/ship.svg": "/EH0TUK/logistic/static/media/ship.0b204e5401c6ea942ae9cf0484dd4ef0.svg",
     "index.html": "/EH0TUK/logistic/index.html",
     "static/media/train.svg": "/EH0TUK/logistic/static/media/train.1691c6d15ffcb7043ec70b72b92e87b4.svg",
-    "static/media/truck.svg": "/EH0TUK/logistic/static/media/truck.58c2b867ee7b3bc6dcfd3bbc5ebc0380.svg",
-    "static/media/whatsapp.svg": "/EH0TUK/logistic/static/media/whatsapp.00e63db35ac889166019212511a761df.svg",
-    "static/media/telegram.svg": "/EH0TUK/logistic/static/media/telegram.57deb5554fa16084fcb14a0a7617a465.svg",
+    "static/media/truck.svg": "/EH0TUK/logistic/static/media/truck.733a94405c371a2b40554b6f964724f6.svg",
+    "static/media/whatsapp.svg": "/EH0TUK/logistic/static/media/whatsapp.d8fb08cd777901f7d67fb8188c7dae95.svg",
+    "static/media/telegram.svg": "/EH0TUK/logistic/static/media/telegram.d02034502b2a46eacc0b6663220c5adc.svg",
     "static/media/getFetch.cjs": "/EH0TUK/logistic/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "static/media/triangle-icon.svg": "/EH0TUK/logistic/static/media/triangle-icon.bb4baf40925ba9c457b44b85d012138e.svg",
+    "static/media/triangle-icon.svg": "/EH0TUK/logistic/static/media/triangle-icon.fcf97d45723110e4449ea8c5cd45f4ab.svg",
     "main.46849af3.css.map": "/EH0TUK/logistic/static/css/main.46849af3.css.map",
-    "main.c285e020.js.map": "/EH0TUK/logistic/static/js/main.c285e020.js.map"
+    "main.7dfb6e43.js.map": "/EH0TUK/logistic/static/js/main.7dfb6e43.js.map"
   },
   "entrypoints": [
     "static/css/main.46849af3.css",
-    "static/js/main.c285e020.js"
+    "static/js/main.7dfb6e43.js"
   ]
 }
