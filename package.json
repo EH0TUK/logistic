@@ -27,7 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://github.com/EH0TUK/logistic/",
+  "homepage": "https://eh0tuk.github.io/logistic/",
   "eslintConfig": {
     "extends": [
       "react-app",
