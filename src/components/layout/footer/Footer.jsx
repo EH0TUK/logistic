@@ -23,10 +23,10 @@ const Footer = () => {
           <nav className="footer__nav">
             <ul className="footer__nav-list">
               <li className="footer__nav-item">
-                <a href="/privacy-policy">{t('footer.links.privacy')}</a>
+                <Link href="/privacy-policy">{t('footer.links.privacy')}</Link>
               </li>
               <li className="footer__nav-item">
-                <a href="/public-offer">{t('footer.links.offer')}</a>
+                <Link href="/public-offer">{t('footer.links.offer')}</Link>
               </li>
             </ul>
           </nav>
