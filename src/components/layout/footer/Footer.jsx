@@ -7,6 +7,10 @@ import whatsAppIcon from '../../../assets/whatsapp.svg';
 const Footer = () => {
   const { t } = useTranslation();
 
+  const phones = t('footer.phones', { returnObjects: true });
+  const phoneArray = Array.isArray(phones) ? phones :
+    typeof phones === 'string' ? [phones] : [];
+
   return (
     <footer className="footer">
       <div className="footer__top-line"></div>
@@ -28,13 +32,11 @@ const Footer = () => {
           </nav>
         </div>
         <div className="footer__column">
-          {Array.isArray(t('footer.phones', { returnObjects: true })) &&
-            t('footer.phones', { returnObjects: true }).map((phone, index) => (
-              <a key={index} href={`tel:${phone.replace(/\D/g, '')}`} className="footer__phone">
-                {phone}
-              </a>
-            ))
-          }
+          {phoneArray.map((phone, index) => (
+            <a key={index} href={`tel:${phone.replace(/\D/g, '')}`} className="footer__phone">
+              {phone}
+            </a>
+          ))}
         </div>
         <div className="footer__column">
           <a href={`mailto:${t('footer.email')}`} className="footer__email">
