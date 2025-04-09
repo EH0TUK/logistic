@@ -27,6 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://github.com/EH0TUK/logistic/",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -48,6 +49,5 @@
   "devDependencies": {
     "gh-pages": "^6.3.0",
     "typescript": "4.9.5"
-  },
-  "homepage": "https://github.com/EH0TUK/logistic"
+  }
 }
