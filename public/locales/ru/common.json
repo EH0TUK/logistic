@@ -1,6 +1,6 @@
 {
     "header": {
-        "companyName": "Название компании",
+        "companyName": "TransOffer",
         "menu": {
             "about": "О нас",
             "request": "Оставить заявку",
@@ -10,7 +10,7 @@
         "burgerLabel": "Открыть меню"
     },
     "footer": {
-        "companyName": "Название компании",
+        "companyName": "TransOffer",
         "links": {
             "privacy": "Политика конфиденциальности",
             "offer": "Публичная оферта"
@@ -20,7 +20,7 @@
             "+380 987 654 321"
         ],
         "email": "info@company.com",
-        "copyright": "© 2023 Название компании. Все права защищены."
+        "copyright": "© 2023 TransOffer. Все права защищены."
     },
     "contacts": {
         "title": "Контакты",

@@ -32,6 +32,7 @@
     margin-right: 5px;
     color: var(--color-text);
     min-width: 120px;
+    max-width: 120px;
 }
 
 .requisites-value {

@@ -3,7 +3,7 @@
     "sections": {
         "general": {
             "title": "1. Общие положения",
-            "content": "ООО \"TransOffer\" (ИНН XXXXXXXX) предлагает заключить договор на следующих условиях:"
+            "content": "ООО \"TransOffer\" (УНП XXXXXXXX) предлагает заключить договор на следующих условиях:"
         },
         "acceptance": {
             "title": "2. Порядок акцепта",
@@ -23,6 +23,6 @@
                 "Таможенных процедур"
             ]
         },
-        "companyDetails": "Реквизиты компании:<br>ООО \"TransOffer\"<br>ИНН: XXXXXXXXXX<br>Адрес: [Ваш юридический адрес]"
+        "companyDetails": "Реквизиты компании:<br>ООО \"TransOffer\"<br>УНП: XXXXXXXXXX<br>Адрес: [Ваш юридический адрес]"
     }
 }

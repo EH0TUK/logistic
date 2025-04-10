@@ -1,6 +1,6 @@
 {
     "header": {
-        "companyName": "Company Name",
+        "companyName": "TransOffer",
         "menu": {
             "about": "About Us",
             "request": "Place an Order",
@@ -10,7 +10,7 @@
         "burgerLabel": "Open menu"
     },
     "footer": {
-        "companyName": "Company Name",
+        "companyName": "TransOffer",
         "links": {
             "privacy": "Privacy Policy",
             "offer": "Public Offer"
@@ -20,7 +20,7 @@
             "+380 987 654 321"
         ],
         "email": "info@company.com",
-        "copyright": "© 2023 Company Name. All rights reserved."
+        "copyright": "© 2023 TransOffer. All rights reserved."
     },
     "contacts": {
         "title": "Contacts",
