@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import ContactsWindow from '../../common/ContactsWindow/ContactsWindow';
-import TriangleIcon from '../../../assets/arrow-white.png';
+import TriangleIcon from '../../common/TriangleIcon/TriangleIcon';
 import './DeliveryCalculator.css';
 import '../../common/Button/Button.css';
 
@@ -310,7 +310,7 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
                         {isSubmitting ? t('calculator.sending') : t('calculator.button')}
                     </span>
                     <span className="button__icon">
-                        <img src={TriangleIcon} alt="icon" className="button__icon-img" />
+                        <TriangleIcon color="var(--color-background-log)" />
                     </span>
                 </button>
                 <span className="delivery-calculator__note">

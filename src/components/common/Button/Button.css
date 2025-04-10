@@ -51,9 +51,7 @@
     justify-content: center;
 }
 
-
 .button__icon-img {
     width: 16px;
     height: 16px;
-    filter: var(--icon-filter);
 }

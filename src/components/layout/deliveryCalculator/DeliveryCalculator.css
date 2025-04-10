@@ -175,7 +175,6 @@
 .delivery-calculator__content.full-width .delivery-calculator__wrapper {
     width: 100%;
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;

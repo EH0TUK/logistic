@@ -1,6 +1,6 @@
 import React from 'react';
 import './Button.css';
-import TriangleIcon from '../../../assets/triangle-icon.svg';
+import TriangleIcon from '../TriangleIcon/TriangleIcon';
 
 const smoothScroll = (targetId) => {
   const target = document.getElementById(targetId);
@@ -9,7 +9,7 @@ const smoothScroll = (targetId) => {
   const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
   const startPosition = window.pageYOffset;
   const distance = targetPosition - startPosition;
-  const duration = 800; // Длительность анимации в мс
+  const duration = 800;
   let startTime = null;
 
   const animation = (currentTime) => {
@@ -33,29 +33,22 @@ const smoothScroll = (targetId) => {
 const Button = ({ text, targetId }) => {
   const handleClick = () => {
     if (targetId) {
-      // Проверяем поддержку smooth scroll
       if ('scrollBehavior' in document.documentElement.style) {
         document.getElementById(targetId)?.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
       } else {
-        smoothScroll(targetId); // Используем полифилл
+        smoothScroll(targetId);
       }
     }
   };
 
-
   return (
-    <button className="button" onClick={handleClick}>
+    <button className="button button-light" onClick={handleClick}>
       <span className="button__text">{text}</span>
       <span className="button__icon">
-        <img
-          src={TriangleIcon}
-          alt="icon"
-          className="button__icon-img"
-          style={{ filter: 'var(--icon-filter)' }}
-        />
+        <TriangleIcon color="var(--color-background-card)" />
       </span>
     </button>
   );

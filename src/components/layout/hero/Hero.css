@@ -65,10 +65,17 @@
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
+.button-light {
+    border: 2px solid var(--color-background-card);
+    color: var(--color-background-card);
+}
 @media (max-width: 768px) {
     .hero {
         padding-bottom: 120px;
+    }
+    .hero__title {
+        font-size: 40px;
+        word-wrap: break-word; /* Перенос длинных слов */
     }
 }
 
