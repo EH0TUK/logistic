@@ -5,8 +5,8 @@
         "button": "Order"
     },
     "companyInfo": {
-        "title": "COMPANY NAME",
-        "description": "The logistics company 'OUR CONTINENT' was founded in 2018. For 8 years we have been working in this field and transporting oversized cargo across Russia and CIS countries. We have everything necessary for this responsible and complex work. Our main goals are timely delivery of cargo from point A to point B while maintaining the quality and integrity of the transported goods. Quality, punctuality and responsibility are our key skills."
+        "title": "TRANS OFFER",
+        "description": "The logistics company 'TRANS OFFER' was founded in 2018. For 8 years we have been working in this field and transporting oversized cargo across Russia and CIS countries. We have everything necessary for this responsible and complex work. Our main goals are timely delivery of cargo from point A to point B while maintaining the quality and integrity of the transported goods. Quality, punctuality and responsibility are our key skills."
     },
     "advantages": {
         "items": [
@@ -23,8 +23,8 @@
         "employees": "Employees"
     },
     "calculator": {
-        "title": "Calculate the cost",
-        "subtitle": "of cargo transportation",
+        "title": "Leave",
+        "subtitle": "a request",
         "description": "Submit your request and our manager will call you back",
         "fields": {
             "origin": "Pickup location",

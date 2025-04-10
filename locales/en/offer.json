@@ -3,7 +3,7 @@
     "sections": {
         "general": {
             "title": "1. General Terms",
-            "content": "LLC \"TransOffer\" (Tax ID XXXXXXXX) offers to enter into an agreement under the following conditions:"
+            "content": "LLC \"TransOffer\" (PIN XXXXXXXX) offers to enter into an agreement under the following conditions:"
         },
         "acceptance": {
             "title": "2. Acceptance Procedure",
@@ -23,6 +23,6 @@
                 "Customs clearance procedures"
             ]
         },
-        "companyDetails": "Company details:<br>LLC \"TransOffer\"<br>Tax ID: XXXXXXXXXX<br>Legal address: [Your registered address]"
+        "companyDetails": "Company details:<br>LLC \"TransOffer\"<br>PIN: XXXXXXXXXX<br>Legal address: [Your registered address]"
     }
 }

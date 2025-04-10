@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/logistic/static/css/main.5b0082d8.css",
+    "main.css": "/logistic/static/css/main.471341a1.css",
     "main.js": "/logistic/static/js/main.85968538.js",
     "static/media/background.jpg": "/logistic/static/media/background.c104e3920cf26be49ad6.jpg",
     "static/media/train-1.jpg": "/logistic/static/media/train-1.e3e5a2e38b62d405edb3.jpg",
@@ -27,11 +27,11 @@
     "static/media/whatsapp.svg": "/logistic/static/media/whatsapp.d8fb08cd777901f7d67fb8188c7dae95.svg",
     "static/media/telegram.svg": "/logistic/static/media/telegram.d02034502b2a46eacc0b6663220c5adc.svg",
     "static/media/getFetch.cjs": "/logistic/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.5b0082d8.css.map": "/logistic/static/css/main.5b0082d8.css.map",
+    "main.471341a1.css.map": "/logistic/static/css/main.471341a1.css.map",
     "main.85968538.js.map": "/logistic/static/js/main.85968538.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b0082d8.css",
+    "static/css/main.471341a1.css",
     "static/js/main.85968538.js"
   ]
 }

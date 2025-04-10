@@ -58,7 +58,11 @@
                     "value": "123 Logistics St, Moscow, Russia"
                 },
                 {
-                    "label": "Tax ID",
+                    "label": "Bank",
+                    "value": "Belarusbank"
+                },
+                {
+                    "label": "PIN",
                     "value": "1234567890"
                 }
             ]
