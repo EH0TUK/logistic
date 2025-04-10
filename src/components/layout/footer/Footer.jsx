@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import telegramIcon from '../../../assets/telegram.svg';
 import whatsAppIcon from '../../../assets/whatsapp.svg';
@@ -23,10 +24,10 @@ const Footer = () => {
           <nav className="footer__nav">
             <ul className="footer__nav-list">
               <li className="footer__nav-item">
-                <Link href="/privacy-policy">{t('footer.links.privacy')}</Link>
+                <Link to="/privacy-policy">{t('footer.links.privacy')}</Link>
               </li>
               <li className="footer__nav-item">
-                <Link href="/public-offer">{t('footer.links.offer')}</Link>
+                <Link to="/public-offer">{t('footer.links.offer')}</Link>
               </li>
             </ul>
           </nav>
