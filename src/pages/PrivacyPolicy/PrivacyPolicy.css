@@ -19,20 +19,26 @@
 }
 
 .section-content {
-    background: var(--color-background-card-l);
+    background-color: var(--color-background-card-l);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     border-radius: 8px;
     margin-top: 1rem;
 }
+
 .section-content__item {
     padding-bottom: 10px;
 }
+
 .section-content__item:last-child {
     padding-bottom: 0;
 }
+
 .section-content__subtitle {
     padding-bottom: 20px;
 }
+
 .subtitle-small {
     font-size: 1.2rem;
     color: var(--color-subtitle);

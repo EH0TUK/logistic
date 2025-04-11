@@ -1,3 +1,15 @@
 .public-offer {
     padding-top: 120px;
 }
+
+.public-offer__content {
+    margin: 2.5rem 0;
+}
+
+.public-offer__section {
+    background-color: var(--color-background-card-l);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+}

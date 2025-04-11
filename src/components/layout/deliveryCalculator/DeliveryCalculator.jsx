@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import ContactsWindow from '../../common/ContactsWindow/ContactsWindow';
-import TriangleIcon from '../../common/TriangleIcon/TriangleIcon';
 import './DeliveryCalculator.css';
 import '../../common/Button/Button.css';
 
@@ -11,10 +9,15 @@ const TelegramConfig = {
     CHAT_ID: process.env.REACT_APP_TELEGRAM_CHAT_ID,
 };
 
-const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
+const sanitizeText = (text) => {
+    if (!text) return '';
+    return String(text).replace(/[<>]/g, '');
+};
+
+const DeliveryCalculator = ({ fullForm = false }) => {
     const { t } = useTranslation('home');
 
-    const getInitialFormData = () => ({
+    const getInitialFormData = useCallback(() => ({
         origin: '',
         destination: '',
         deliveryType: 'multimodal',
@@ -29,31 +32,28 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
             customsClearance: '',
             deliveryTime: ''
         })
-    });
+    }), [fullForm]);
 
     const [formData, setFormData] = useState(getInitialFormData());
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState(null);
 
     useEffect(() => {
-        let isMounted = true;
+        const timer = setTimeout(() => {
+            localStorage.setItem('deliveryForm', JSON.stringify(formData));
+        }, 500);
 
-        const savedData = localStorage.getItem('deliveryForm');
-        if (isMounted && savedData) {
-            setFormData(JSON.parse(savedData));
-        }
-
-        return () => {
-            isMounted = false;
-        };
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem('deliveryForm', JSON.stringify(formData));
+        return () => clearTimeout(timer);
     }, [formData]);
 
-    const validateField = (name, value) => {
+    useEffect(() => {
+        const savedData = localStorage.getItem('deliveryForm');
+        if (savedData) {
+            setFormData(JSON.parse(savedData));
+        }
+    }, []);
+
+    const validateField = useCallback((name, value) => {
         let error = '';
         switch (name) {
             case 'origin':
@@ -67,8 +67,8 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
                     error = t('calculator.errors.phoneRequired');
                 } else {
                     const cleanPhone = value.replace(/[^\d+]/g, '');
-                    if (cleanPhone.replace(/\D/g, '').length < 9) {
-                        error = t('calculator.errors.phoneShort');
+                    if (!/^\+[\d]{10,15}$/.test(cleanPhone)) {
+                        error = t('calculator.errors.phoneInvalid');
                     }
                 }
                 break;
@@ -83,22 +83,16 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
                     error = t('calculator.errors.portRequired');
                 }
                 break;
-            case 'containerType':
-            case 'customsClearance':
-                if (fullForm && !value.trim()) error = t('calculator.errors.required');
-                break;
-            case 'deliveryTime':
-                if (fullForm && !/^\d+-\d+ days$/.test(value)) error = t('calculator.errors.deliveryFormat');
-                break;
             default:
                 break;
         }
         return error;
-    };
+    }, [t, formData.deliveryType]);
 
-    const handleChange = (e) => {
+    const handleChange = useCallback((e) => {
         const { name, value } = e.target;
-        let processedValue = value || ''; // Защита от undefined/null
+        let processedValue = value || '';
+
         if (name === 'phone') {
             processedValue = value.replace(/[^\d+]/g, '').slice(0, 16);
             if (!processedValue.startsWith('+')) {
@@ -107,11 +101,11 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
         }
 
         const error = validateField(name, processedValue);
-        setErrors({ ...errors, [name]: error });
-        setFormData({ ...formData, [name]: processedValue });
-    };
+        setErrors(prev => ({ ...prev, [name]: error }));
+        setFormData(prev => ({ ...prev, [name]: processedValue }));
+    }, [validateField]);
 
-    const validateForm = () => {
+    const validateForm = useCallback(() => {
         const newErrors = {};
         Object.keys(formData).forEach(name => {
             const error = validateField(name, formData[name]);
@@ -119,122 +113,104 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
         });
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
-    };
+    }, [formData, validateField]);
 
-    const sendToTelegram = (data) => {
-        return new Promise(async (resolve) => {
-            try {
-                const deliveryTypeMap = {
-                    'multimodal': t('calculator.deliveryTypes.multimodal'),
-                    'road': t('calculator.deliveryTypes.road'),
-                    'rail': t('calculator.deliveryTypes.rail'),
-                    'sea': t('calculator.deliveryTypes.sea'),
-                    'air': t('calculator.deliveryTypes.air')
-                };
+    const sendToTelegram = useCallback(async (data) => {
+        if (!TelegramConfig.BOT_TOKEN || !TelegramConfig.CHAT_ID) {
+            console.error('Telegram configuration is incomplete');
+            return false;
+        }
 
-                // Формируем сообщение
-                let message = `New transportation calculation request:\n` +
-                    `🚚 Delivery type: ${deliveryTypeMap[data.deliveryType]}\n` +
-                    `📍 From: ${data.origin}\n` +
-                    `🏁 To: ${data.destination}\n` +
-                    `📦 Cargo: ${data.type}\n` +
-                    `⚖️ Weight: ${data.weight}\n` +
-                    `📏 Volume: ${data.volume}\n` +
-                    `👤 Name: ${data.name}\n` +
-                    `📱 Phone: ${data.phone}`;
+        try {
+            const deliveryTypeMap = {
+                'multimodal': t('calculator.deliveryTypes.multimodal'),
+                'road': t('calculator.deliveryTypes.road'),
+                'rail': t('calculator.deliveryTypes.rail'),
+                'sea': t('calculator.deliveryTypes.sea')
+            };
 
-                // Добавляем опциональные поля
-                if (data.port) message += `\n🛳️ Port: ${data.port}`;
-                if (fullForm) {
-                    message += `\n📦 Container: ${data.containerType || 'N/A'}` +
-                        `\n🛃 Customs: ${data.customsClearance || 'N/A'}` +
-                        `\n⏱ Delivery Time: ${data.deliveryTime || 'N/A'}`;
-                }
+            let message = `New transportation request:\n` +
+                `🚚 Delivery: ${deliveryTypeMap[data.deliveryType]}\n` +
+                `📍 From: ${sanitizeText(data.origin)}\n` +
+                `🏁 To: ${sanitizeText(data.destination)}\n` +
+                `📦 Cargo: ${sanitizeText(data.type)}\n` +
+                `⚖️ Weight: ${sanitizeText(data.weight)}\n` +
+                `📏 Volume: ${sanitizeText(data.volume)}\n` +
+                `👤 Name: ${sanitizeText(data.name)}\n` +
+                `📱 Phone: ${sanitizeText(data.phone)}`;
 
-                // Проверяем наличие обязательных параметров
-                if (!TelegramConfig.BOT_TOKEN || !TelegramConfig.CHAT_ID) {
-                    throw new Error('Telegram configuration is incomplete');
-                }
-
-                // Отправляем запрос
-                const response = await fetch(
-                    `https://api.telegram.org/bot${TelegramConfig.BOT_TOKEN}/sendMessage`,
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            chat_id: TelegramConfig.CHAT_ID,
-                            text: message,
-                            parse_mode: 'Markdown',
-                        }),
-                    }
-                );
-
-                // Обрабатываем ответ
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.description || 'Failed to send message');
-                }
-
-                const result = await response.json();
-                resolve({ success: true, data: result });
-
-            } catch (error) {
-                console.error('Telegram API Error:', error);
-                resolve({
-                    success: false,
-                    error: error.message || 'Unknown error occurred'
-                });
+            if (data.port) message += `\n🛳️ Port: ${sanitizeText(data.port)}`;
+            if (fullForm) {
+                message += `\n📦 Container: ${sanitizeText(data.containerType)}\n` +
+                    `🛃 Customs: ${sanitizeText(data.customsClearance)}\n` +
+                    `⏱ Time: ${sanitizeText(data.deliveryTime)}`;
             }
-        });
-    };
 
-    const handleSubmit = async (e) => {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+            const response = await fetch(
+                `https://api.telegram.org/bot${TelegramConfig.BOT_TOKEN}/sendMessage`,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TelegramConfig.CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown',
+                    }),
+                    signal: controller.signal
+                }
+            );
+
+            clearTimeout(timeoutId);
+            return response.ok;
+        } catch (error) {
+            console.error('Telegram API Error:', error);
+            return false;
+        }
+    }, [t, fullForm]);
+
+    const handleSubmit = useCallback(async (e) => {
         e.preventDefault();
         if (!validateForm()) return;
 
         setIsSubmitting(true);
-        setSubmitStatus(null);
-
-        const { success, error } = await sendToTelegram(formData);
-
-        setSubmitStatus(success ? 'success' : 'error');
-        setIsSubmitting(false);
+        const success = await sendToTelegram(formData);
 
         if (success) {
             setFormData(getInitialFormData());
             localStorage.removeItem('deliveryForm');
-        } else {
-            console.error('Failed to send:', error);
         }
-    };
 
-    const renderField = (name, type = 'text') => {
-        return (
-            <div className="delivery-calculator__field" key={name}>
-                <label className="delivery-calculator__label">
-                    {t(`calculator.fields.${name}`)}
-                </label>
-                <input
-                    type={type}
-                    name={name}
-                    value={formData[name] || ''}
-                    onChange={handleChange}
-                    placeholder={t(`calculator.placeholders.${name}`)}
-                    className={`delivery-calculator__input ${errors[name] ? 'invalid' : ''}`}
-                />
-                <span className={`delivery-calculator__error ${errors[name] ? 'active' : ''}`}>
+        setIsSubmitting(false);
+    }, [formData, validateForm, sendToTelegram, getInitialFormData]);
+
+    const renderField = useCallback((name, type = 'text') => (
+        <div className="delivery-calculator__field" key={name}>
+            <label className="delivery-calculator__label">
+                {t(`calculator.fields.${name}`)}
+            </label>
+            <input
+                type={type}
+                name={name}
+                value={formData[name] || ''}
+                onChange={handleChange}
+                placeholder={t(`calculator.placeholders.${name}`)}
+                className={`delivery-calculator__input ${errors[name] ? 'invalid' : ''}`}
+                aria-invalid={!!errors[name]}
+            />
+            {errors[name] && (
+                <span className="delivery-calculator__error active">
                     {errors[name]}
                 </span>
-            </div>
-        );
-    };
+            )}
+        </div>
+    ), [formData, errors, t, handleChange]);
 
     return (
         <div className="delivery-calculator wrapper" id="target-section">
-            <div className={`delivery-calculator__content ${showContacts ? 'with-contacts' : 'full-width'}`}>
+            <div className="delivery-calculator__content full-width">
                 <div className="delivery-calculator__wrapper">
                     <div className="delivery-calculator__title">
                         <h2>{t('calculator.title')}</h2>
@@ -244,13 +220,7 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
                         {t('calculator.description')}
                     </p>
 
-                    {submitStatus && (
-                        <div className={`delivery-calculator__${submitStatus}`}>
-                            {t(`calculator.${submitStatus}`)}
-                        </div>
-                    )}
-
-                    <form id="delivery-form" onSubmit={handleSubmit} className="delivery-calculator__form">
+                    <form onSubmit={handleSubmit} className="delivery-calculator__form">
                         <div className="delivery-calculator__form-column">
                             {renderField('origin')}
                             {renderField('type')}
@@ -263,7 +233,7 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
                                 </label>
                                 <select
                                     name="deliveryType"
-                                    value={formData.deliveryType || 'multimodal'}
+                                    value={formData.deliveryType}
                                     onChange={handleChange}
                                     className="delivery-calculator__input"
                                 >
@@ -280,7 +250,6 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
                             {renderField('destination')}
                             {renderField('volume')}
                             {renderField('name')}
-
                             {fullForm && (
                                 <>
                                     {renderField('containerType')}
@@ -289,46 +258,35 @@ const DeliveryCalculator = ({ fullForm = false, showContacts = true }) => {
                                 </>
                             )}
                         </div>
+
+                        <div className="delivery-calculator__agree">
+                            <button
+                                className="button"
+                                type="submit"
+                                disabled={isSubmitting}
+                                aria-label={isSubmitting ? t('calculator.sending') : t('calculator.button')}
+                            >
+                                <span className="button__text">
+                                    {isSubmitting ? t('calculator.sending') : t('calculator.button')}
+                                </span>
+                            </button>
+                            <span className="delivery-calculator__note">
+                                {t('calculator.agreement')}
+                            </span>
+                        </div>
                     </form>
                 </div>
-
-                {showContacts && (
-                    <div className="contacts-container">
-                        <ContactsWindow />
-                    </div>
-                )}
-            </div>
-
-            <div className="delivery-calculator__agree">
-                <button
-                    className="button"
-                    type="submit"
-                    form="delivery-form"
-                    disabled={isSubmitting}
-                >
-                    <span className="button__text">
-                        {isSubmitting ? t('calculator.sending') : t('calculator.button')}
-                    </span>
-                    <span className="button__icon">
-                        <TriangleIcon color="var(--color-background-log)" />
-                    </span>
-                </button>
-                <span className="delivery-calculator__note">
-                    {t('calculator.agreement')}
-                </span>
             </div>
         </div>
     );
 };
 
 DeliveryCalculator.propTypes = {
-    fullForm: PropTypes.bool,
-    showContacts: PropTypes.bool
+    fullForm: PropTypes.bool
 };
 
 DeliveryCalculator.defaultProps = {
-    fullForm: false,
-    showContacts: true
+    fullForm: false
 };
 
 export default DeliveryCalculator;

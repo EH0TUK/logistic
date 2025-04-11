@@ -9,18 +9,20 @@ const PublicOffer = () => {
   const sections = [
     {
       key: 'general',
-      content: <p>{t('sections.general.content')}</p>
+      content: <p className='public-offer__section'>{t('sections.general.content')}</p>
     },
     {
       key: 'acceptance',
       content: (
         <>
-          <p>{t('sections.acceptance.content')}</p>
-          <ul>
-            {t('sections.acceptance.items', { returnObjects: true }).map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="public-offer__section">
+            <p>{t('sections.acceptance.content')}</p>
+            <ul>
+              {t('sections.acceptance.items', { returnObjects: true }).map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </>
       )
     },
@@ -28,12 +30,14 @@ const PublicOffer = () => {
       key: 'deliveryTerms',
       content: (
         <>
-          <p>{t('sections.deliveryTerms.content')}</p>
-          <ul>
-            {t('sections.deliveryTerms.items', { returnObjects: true }).map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="public-offer__section">
+            <p>{t('sections.deliveryTerms.content')}</p>
+            <ul>
+              {t('sections.deliveryTerms.items', { returnObjects: true }).map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </>
       )
     }
@@ -41,17 +45,17 @@ const PublicOffer = () => {
 
   return (
     <div className='public-offer'>
-      <div className="wrapper">
-        <h1 className="title">{t('title')}</h1>
+      <div className="public-offer__wrapper wrapper">
+        <h1 className="public-offer__title title">{t('title')}</h1>
 
         {sections.map((section) => (
-          <div className="text" key={section.key}>
-            <h2 className="subtitle">{t(`sections.${section.key}.title`)}</h2>
+          <div className="public-offer__content text" key={section.key}>
+            <h2 className="public-offer__subtitle subtitle">{t(`sections.${section.key}.title`)}</h2>
             {section.content}
           </div>
         ))}
 
-        <div className="text">
+        <div className="public-offer__section text">
           <p dangerouslySetInnerHTML={{ __html: t('sections.companyDetails') }} />
         </div>
       </div>

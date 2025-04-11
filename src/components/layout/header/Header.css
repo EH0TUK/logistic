@@ -191,21 +191,29 @@
 
   .header__nav {
     position: fixed;
-    top: -100%;
+    top: -100vh;
+    /* Используем vh вместо % для надежности */
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
     background-color: var(--color-background);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     transition: top 0.3s ease-in-out;
-    z-index: 1000;
+    z-index: 999;
+    overflow-y: auto;
+    /* Добавляем эти свойства для гарантированного скрытия */
+    opacity: 0;
+    visibility: hidden;
   }
 
   .header__nav--active {
     top: 0;
+    opacity: 1;
+    visibility: visible;
   }
 
   .header__nav-list {
