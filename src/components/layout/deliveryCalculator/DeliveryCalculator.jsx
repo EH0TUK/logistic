@@ -29,7 +29,7 @@ const DeliveryCalculator = ({ fullForm = false }) => {
         port: '',
         ...(fullForm && {
             containerType: '',
-            customsClearance: '',
+            customsClearance: 'no',
             deliveryTime: ''
         })
     }), [fullForm]);
@@ -73,10 +73,10 @@ const DeliveryCalculator = ({ fullForm = false }) => {
                 }
                 break;
             case 'weight':
-                if (!/^\d+кг?$/.test(value)) error = t('calculator.errors.weightFormat');
+                if (!/^\d+$/.test(value)) error = t('calculator.errors.weightFormat');
                 break;
             case 'volume':
-                if (!/^\d+ м3?$/.test(value)) error = t('calculator.errors.volumeFormat');
+                if (!/^\d+$/.test(value)) error = t('calculator.errors.volumeFormat');
                 break;
             case 'port':
                 if (formData.deliveryType === 'sea' && !value.trim()) {
@@ -98,6 +98,8 @@ const DeliveryCalculator = ({ fullForm = false }) => {
             if (!processedValue.startsWith('+')) {
                 processedValue = `+${processedValue.replace(/\D/g, '')}`;
             }
+        } else if (name === 'weight' || name === 'volume') {
+            processedValue = value.replace(/\D/g, '');
         }
 
         const error = validateField(name, processedValue);
@@ -129,19 +131,28 @@ const DeliveryCalculator = ({ fullForm = false }) => {
                 'sea': t('calculator.deliveryTypes.sea')
             };
 
+            const containerTypeMap = {
+                '20ft': t('calculator.containerTypes.20ft'),
+                '40ft': t('calculator.containerTypes.40ft'),
+                '20ft_ref': t('calculator.containerTypes.20ft_ref'),
+                '40ft_ref': t('calculator.containerTypes.40ft_ref'),
+                'open_top': t('calculator.containerTypes.open_top'),
+                'flat_rack': t('calculator.containerTypes.flat_rack')
+            };
+
             let message = `New transportation request:\n` +
                 `🚚 Delivery: ${deliveryTypeMap[data.deliveryType]}\n` +
                 `📍 From: ${sanitizeText(data.origin)}\n` +
                 `🏁 To: ${sanitizeText(data.destination)}\n` +
                 `📦 Cargo: ${sanitizeText(data.type)}\n` +
-                `⚖️ Weight: ${sanitizeText(data.weight)}\n` +
-                `📏 Volume: ${sanitizeText(data.volume)}\n` +
+                `⚖️ Weight: ${sanitizeText(data.weight)}kg\n` +
+                `📏 Volume: ${sanitizeText(data.volume)}m³\n` +
                 `👤 Name: ${sanitizeText(data.name)}\n` +
                 `📱 Phone: ${sanitizeText(data.phone)}`;
 
             if (data.port) message += `\n🛳️ Port: ${sanitizeText(data.port)}`;
             if (fullForm) {
-                message += `\n📦 Container: ${sanitizeText(data.containerType)}\n` +
+                message += `\n📦 Container: ${containerTypeMap[data.containerType] || sanitizeText(data.containerType)}\n` +
                     `🛃 Customs: ${sanitizeText(data.customsClearance)}\n` +
                     `⏱ Time: ${sanitizeText(data.deliveryTime)}`;
             }
@@ -190,6 +201,8 @@ const DeliveryCalculator = ({ fullForm = false }) => {
         <div className="delivery-calculator__field" key={name}>
             <label className="delivery-calculator__label">
                 {t(`calculator.fields.${name}`)}
+                {(name === 'weight')}
+                {(name === 'volume')}
             </label>
             <input
                 type={type}
@@ -199,6 +212,7 @@ const DeliveryCalculator = ({ fullForm = false }) => {
                 placeholder={t(`calculator.placeholders.${name}`)}
                 className={`delivery-calculator__input ${errors[name] ? 'invalid' : ''}`}
                 aria-invalid={!!errors[name]}
+                style={type === 'number' ? { appearance: 'textfield' } : {}}
             />
             {errors[name] && (
                 <span className="delivery-calculator__error active">
@@ -208,13 +222,32 @@ const DeliveryCalculator = ({ fullForm = false }) => {
         </div>
     ), [formData, errors, t, handleChange]);
 
+    const renderSelectField = useCallback((name, options) => (
+        <div className="delivery-calculator__field" key={name}>
+            <label className="delivery-calculator__label">
+                {t(`calculator.fields.${name}`)}
+            </label>
+            <select
+                name={name}
+                value={formData[name] || ''}
+                onChange={handleChange}
+                className="delivery-calculator__input"
+            >
+                {options.map(([key, value]) => (
+                    <option key={key} value={key}>{value}</option>
+                ))}
+            </select>
+        </div>
+    ), [formData, t, handleChange]);
+
     return (
         <div className="delivery-calculator wrapper" id="target-section">
             <div className="delivery-calculator__content full-width">
                 <div className="delivery-calculator__wrapper">
                     <div className="delivery-calculator__title">
-                        <h2>{t('calculator.title')}</h2>
-                        <h2>{t('calculator.subtitle')}</h2>
+                        <h2>{t('calculator.title')}
+                            &nbsp;
+                            {t('calculator.subtitle')}</h2>
                     </div>
                     <p className="delivery-calculator__description">
                         {t('calculator.description')}
@@ -224,7 +257,7 @@ const DeliveryCalculator = ({ fullForm = false }) => {
                         <div className="delivery-calculator__form-column">
                             {renderField('origin')}
                             {renderField('type')}
-                            {renderField('weight')}
+                            {renderField('weight', 'number')}
                             {renderField('phone')}
 
                             <div className="delivery-calculator__field">
@@ -248,12 +281,22 @@ const DeliveryCalculator = ({ fullForm = false }) => {
 
                         <div className="delivery-calculator__form-column">
                             {renderField('destination')}
-                            {renderField('volume')}
+                            {renderField('volume', 'number')}
                             {renderField('name')}
                             {fullForm && (
                                 <>
-                                    {renderField('containerType')}
-                                    {renderField('customsClearance')}
+                                    {renderSelectField('containerType', [
+                                        ['20ft', t('calculator.containerTypes.20ft')],
+                                        ['40ft', t('calculator.containerTypes.40ft')],
+                                        ['20ft_ref', t('calculator.containerTypes.20ft_ref')],
+                                        ['40ft_ref', t('calculator.containerTypes.40ft_ref')],
+                                        ['open_top', t('calculator.containerTypes.open_top')],
+                                        ['flat_rack', t('calculator.containerTypes.flat_rack')]
+                                    ])}
+                                    {renderSelectField('customsClearance', [
+                                        ['yes', t('calculator.placeholders.customsClearanceYes')],
+                                        ['no', t('calculator.placeholders.customsClearanceNo')]
+                                    ])}
                                     {renderField('deliveryTime')}
                                 </>
                             )}
