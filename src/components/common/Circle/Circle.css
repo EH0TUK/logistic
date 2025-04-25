@@ -1,7 +1,7 @@
 .circle-container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 2rem;
 }
 
@@ -9,10 +9,12 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    transform: translate(-50%, -50%);
 }
 
 .plus-line.vertical,
@@ -20,21 +22,26 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+
     background-color: var(--color-primary);
     box-shadow: inset 4px 4px 4px -3px rgba(0, 0, 0, 0.3);
+
+    transform: translate(-50%, -50%);
 }
 
 .plus-line.horizontal::after {
-    content: '';
     position: absolute;
+    z-index: 1;
     top: 0%;
     left: 32%;
+
     width: 37%;
     height: 100%;
+
     background: var(--color-primary);
     background: linear-gradient(315deg,
             var(--color-primary) 80%,
             var(--color-secondary) 100%);
-    z-index: 1;
+
+    content: '';
 }

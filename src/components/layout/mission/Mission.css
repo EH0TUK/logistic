@@ -19,24 +19,27 @@
 .mission__image {
     width: 100%;
     height: auto;
+
     border-radius: 8px;
 }
 
 .mission__content {
     flex: 1;
-    text-align: left;
     padding: 30px;
-    border-radius: 8px;
+
+    text-align: left;
+
     background-color: var(--color-background-card-l);
-    backdrop-filter: blur(10px);
+    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    backdrop-filter: blur(10px);
 }
 
 .mission__text {
     margin-bottom: 20px;
 }
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .mission__container {
         flex-direction: column;

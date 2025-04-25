@@ -38,7 +38,9 @@ const Header = () => {
   }, [isHomePage]);
 
   return (
-    <header className={`header ${isHomePage ? 'home-page' : ''} ${isScrolled ? 'header--scrolled' : ''}`}>
+    <header
+      className={`header ${isHomePage ? 'home-page' : ''} ${isScrolled ? 'header--scrolled' : ''} ${isMenuOpen ? 'header--menu-open' : ''}`}
+    >
       <div className="header__container wrapper">
         <Link to="/" className="header__logo">
           <p>TRANS</p>

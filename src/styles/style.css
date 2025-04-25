@@ -1,103 +1,107 @@
 @font-face {
     font-family: 'gilroy';
+    font-weight: 400;
+
     src: url(../fonts/Gilroy-Regular.woff2) format('woff2');
     src: url(../fonts/Gilroy-Regular.woff) format('woff');
-    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'gilroy';
+    font-weight: 700;
+
     src: url(../fonts/Gilroy-Bold.woff2) format('woff2');
     src: url(../fonts/Gilroy-Bold.woff) format('woff');
-    font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'gilroy';
+    font-weight: 500;
+
     src: url(../fonts/Gilroy-Medium.woff2) format('woff2');
     src: url(../fonts/Gilroy-Medium.woff) format('woff');
-    font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'gilroy';
+    font-weight: 600;
+
     src: url(../fonts/Gilroy-Semibold.woff2) format('woff2');
     src: url(../fonts/Gilroy-Semibold.woff) format('woff');
-    font-weight: 600;
     font-style: normal;
 }
 
 :root {
-    --color-background: #D1D9E2;
-    --color-background-log: #37587F;
+    --color-background: #d1d9e2;
+    --color-background-log: #37587f;
     --color-background-card: #aab6c4;
-    --color-title: #37587F;
+    --color-title: #37587f;
     --color-subtitle: #222222;
-    --color-subtitle-hover: #37587F;
+    --color-subtitle-hover: #37587f;
     --color-text: #222222;
     --color-text-banner: #fff;
     --color-text-gray: #333333;
     --color-text-light-gray: #555555;
     --color-log-line: #aab6c4;
-    --color-log-text: #D1D9E2;
-    --color-text-hover: #A68147;
-    --color-logo: #FFF7EB;
+    --color-log-text: #d1d9e2;
+    --color-text-hover: #a68147;
+    --color-logo: #fff7eb;
     --color-error: #ff6b6b;
     --color-background-card: #fff;
     --color-background-card-l: #37577f3f;
-    --scrollbar-track: #D1D9E2;
+    --scrollbar-track: #d1d9e2;
     --scrollbar-thumb: #aab6c4;
     --scrollbar-thumb-hover: #fff;
     --color-lang: #fff;
-    --color-lang-hover: #A68147;
-
-    --color-primary: #FFF1DA;
-    --color-secondary: #A68147;
-
+    --color-lang-hover: #a68147;
+    --color-primary: #fff1da;
+    --color-secondary: #a68147;
     --font-size-title: 2.2rem;
     --font-size-subtitle: 1.7rem;
     --font-size-title-card: 1.5rem;
     --font-size-text: 1.1rem;
     --font-size-mobile-title: 2rem;
     --font-size-mobile-text: 1rem;
-
     --icon-filter: brightness(0) saturate(100%) invert(22%) sepia(39%) saturate(1204%) hue-rotate(178deg) brightness(91%) contrast(91%);
 }
 
 .title {
-    font-size: var(--font-size-title);
-    color: var(--color-title);
-    font-weight: 600;
     margin-bottom: 20px;
+
+    font-size: var(--font-size-title);
+    font-weight: 600;
+    color: var(--color-title);
 }
 
 .subtitle {
     font-size: var(--font-size-subtitle);
-    color: var(--color-subtitle);
     font-weight: 600;
+    color: var(--color-subtitle);
 }
 
 .title-card {
-    font-size: var(--font-size-title-card);
-    color: var(--color-subtitle-hover);
-    font-weight: 500;
     margin-bottom: 15px;
+
+    font-size: var(--font-size-title-card);
+    font-weight: 500;
+    color: var(--color-subtitle-hover);
 }
 
 .text {
     font-size: var(--font-size-text);
-    color: var(--color-text);
     font-weight: 500;
     line-height: 1.6;
+    color: var(--color-text);
 }
 
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
+
     border: 0;
 }
 
@@ -140,6 +144,7 @@ button {
 
 button::-moz-focus-inner {
     padding: 0;
+
     border: 0;
 }
 
@@ -167,33 +172,39 @@ h6 {
 }
 
 img {
-    object-fit: cover;
     width: 100%;
     height: 100%;
+
+    object-fit: cover;
 }
 
 body,
 html {
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+
     font-size: 100%;
-    line-height: 1;
     font-size: 16px;
+    line-height: 1;
+
+    background-color: var(--color-background);
+
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    background-color: var(--color-background);
     scroll-behavior: smooth;
 }
 
 .wrapper {
+    position: relative;
+
     max-width: 1200px;
+    height: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    position: relative;
-    height: 100%;
+
     font-family: 'gilroy';
 
 }
@@ -205,8 +216,8 @@ html {
 }
 
 .app-content {
-    flex-grow: 1;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
 }
 
@@ -222,8 +233,9 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb, #c1c1c1);
-    border-radius: 10px;
     border: 2px solid transparent;
+    border-radius: 10px;
+
     background-clip: content-box;
 }
 
@@ -244,9 +256,12 @@ html {
 
 @media (max-width: 768px) {
     .title {
-        font-size: var(--font-size-mobile-title);
         margin-bottom: 15px;
+
+        font-size: var(--font-size-mobile-title);
+
         overflow-wrap: break-word;
+
         /* Переносит длинные слова */
         word-break: normal;
         /* Стандартное поведение */

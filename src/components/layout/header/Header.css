@@ -1,10 +1,12 @@
 .header {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 80px;
-  z-index: 1000;
+
   transition: background-color 0.3s ease;
 }
 
@@ -23,8 +25,8 @@
 
 .header__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 28px 0px 28px 0px;
 }
 
@@ -32,9 +34,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--color-logo);
   height: 100%;
+
   font-weight: 600;
+  color: var(--color-logo);
   text-align: right;
 }
 
@@ -47,12 +50,12 @@
   color: var(--color-text-hover);
 }
 
-/* Навигация */
 .header__nav-list {
   display: flex;
-  list-style: none;
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .header__nav-item {
@@ -65,30 +68,34 @@
 }
 
 .header__nav-link {
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
   position: relative;
+
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+
   transition: color 0.3s ease;
 }
 
 .header__nav-link::after {
-  content: '';
   position: absolute;
-  left: 0;
   bottom: -5px;
+  left: 0;
+
   width: 0;
   height: 2px;
+
   background-color: var(--color-text-hover);
   border-radius: 2px;
   transition: width 0.3s ease;
+
+  content: '';
 }
 
 .header__nav-link:hover::after {
   width: 100%;
 }
 
-/* Контакты */
 .header__contacts {
   display: flex;
   align-items: center;
@@ -96,28 +103,27 @@
 
 .header__contacts--mobile {
   display: none;
-  /* Скрываем на десктопе */
 }
 
 .header__phone {
-  text-decoration: none;
-  color: white;
-  /* Всегда белый цвет текста */
   margin-right: 1rem;
+
+  color: white;
+  text-decoration: none;
+
   transition: color 0.3s ease;
-  /* Плавность изменения цвета */
 }
 
 .header__phone:hover {
   color: var(--color-text-hover);
-  /* Цвет при наведении */
 }
 
 .header__social-list {
   display: flex;
-  list-style: none;
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .header__social-item {
@@ -125,10 +131,15 @@
 }
 
 .header__social-svg {
+  display: inline-block;
   width: 24px;
   height: 24px;
-  display: inline-block;
+
+  color: white;
+
   background-color: currentColor;
+  transition: all 0.3s ease;
+
   mask-image: var(--svg-url);
   mask-repeat: no-repeat;
   mask-position: center;
@@ -137,8 +148,6 @@
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
-  transition: all 0.3s ease;
-  color: white;
 }
 
 .header__social-link:hover .header__social-svg {
@@ -146,27 +155,29 @@
 }
 
 .header__burger {
+  z-index: 1001;
+
   display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
   height: 21px;
+  padding: 0;
+
   background: transparent;
   border: none;
+
   cursor: pointer;
-  padding: 0;
-  z-index: 1001;
 }
 
 .header__burger-line {
   width: 100%;
   height: 3px;
+
   background-color: white;
-  /* Всегда белый цвет бургера */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Анимация бургер-меню */
 .header__burger--active .header__burger-line:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -179,7 +190,10 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Адаптивность */
+.home-page.header.header--menu-open:not(.header--scrolled) {
+  background-color: var(--color-background-log) !important;
+}
+
 @media (max-width: 768px) {
   .header__logo-image {
     height: 30px;
@@ -191,28 +205,31 @@
 
   .header__nav {
     position: fixed;
+    z-index: 999;
     top: -100vh;
-    /* Используем vh вместо % для надежности */
     left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: calc(100vh - 80px);
     margin-top: 80px;
+
     background-color: var(--color-background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: top 0.3s ease-in-out;
-    z-index: 999;
-    overflow-y: auto;
-    /* Добавляем эти свойства для гарантированного скрытия */
     opacity: 0;
+    transition: top 0.3s ease-in-out;
+
+    overflow-y: auto;
     visibility: hidden;
   }
 
   .header__nav--active {
     top: 0;
+
     opacity: 1;
+
     visibility: visible;
   }
 
@@ -226,16 +243,17 @@
   }
 
   .header__nav-link {
-    color: var(--color-text);
-    font-weight: 500;
     font-size: var(--font-size-subtitle);
+    font-weight: 500;
+    color: var(--color-text);
   }
 
   .header__phone {
-    color: var(--color-text);
-    font-weight: 500;
-    font-size: var(--font-size-subtitle);
     margin: 0 0 40px 0;
+
+    font-size: var(--font-size-subtitle);
+    font-weight: 500;
+    color: var(--color-text);
   }
 
   .header__contacts--desktop {
@@ -260,5 +278,9 @@
   .header__contacts--mobile .header__social-icon {
     width: 32px;
     height: 32px;
+  }
+
+  .home-page.header.header--menu-open {
+    background-color: var(--color-background) !important;
   }
 }

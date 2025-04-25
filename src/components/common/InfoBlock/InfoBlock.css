@@ -13,14 +13,17 @@
 }
 
 .info-block__image {
-    height: 80px;
     width: 80px;
-    object-fit: contain;
+    height: 80px;
+
     color: var(--color-text-hover);
+
+    object-fit: contain;
 }
 
 .info-block__svg-image {
     background-color: currentColor;
+
     mask-image: var(--svg-url);
     mask-repeat: no-repeat;
     mask-position: center;
