@@ -4,6 +4,12 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preload" href="../src/components/layout/header/Header.css" as="style">
+  <link rel="preload" href="../src/fonts/Girby-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../src/fonts/Girby-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../src/fonts/Girby-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
   <meta name="theme-color" content="#000000" />
   <meta name="description"
     content="Компания TransOffer - мультимодальные перевозки грузов по всему миру. Надёжные логистические решения для вашего бизнеса." />
@@ -95,15 +101,19 @@
   <div id="root"></div>
 
   <style>
-    @keyframes spin {
-      0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-
-      100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
     }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+
+
+
   </style>
 </body>
 

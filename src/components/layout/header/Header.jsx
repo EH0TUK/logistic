@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../common/LanguageSwitcher/LanguageSwitcher';
@@ -8,39 +8,60 @@ import './Header.css';
 
 const Header = () => {
   const { t } = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  // Состояния
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isHomePage = location.pathname === '/';
+  const [isScrolled, setIsScrolled] = useState(!isHomePage);
 
+  // 1. Эффект для закрытия меню при смене роута
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
+  // 2. Эффект для блокировки скролла при открытом меню
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
     return () => { document.body.style.overflow = 'auto'; };
   }, [isMenuOpen]);
-  const isHomePage = location.pathname === '/';
-  const [isScrolled, setIsScrolled] = useState(isHomePage ? false : true);
 
+  // 3. Оптимизированный обработчик скролла
+  const handleScroll = useCallback(() => {
+    if (isHomePage) {
+      setIsScrolled(window.scrollY > 50);
+    }
+  }, [isHomePage]);
+
+  // 4. Эффект для подписки на скролл с троттлингом
   useEffect(() => {
-    const handleScroll = () => {
-      if (isHomePage) {
-        setIsScrolled(window.scrollY > 50);
+    if (!isHomePage) return;
+
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    handleScroll();
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    return () => window.removeEventListener('scroll', throttledScroll);
+  }, [isHomePage, handleScroll]);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage]);
+  // Мемоизированные классы для header
+  const headerClasses = useMemo(() => [
+    'header',
+    isHomePage && 'home-page',
+    isScrolled && 'header--scrolled',
+    isMenuOpen && 'header--menu-open'
+  ].filter(Boolean).join(' '), [isHomePage, isScrolled, isMenuOpen]);
 
   return (
-    <header
-      className={`header ${isHomePage ? 'home-page' : ''} ${isScrolled ? 'header--scrolled' : ''} ${isMenuOpen ? 'header--menu-open' : ''}`}
-    >
+    <header className={headerClasses}>
       <div className="header__container wrapper">
         <Link to="/" className="header__logo">
           <p>TRANS</p>
@@ -49,7 +70,7 @@ const Header = () => {
 
         <button
           className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
-          onClick={toggleMenu}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={t('header.burgerLabel')}
         >
           <span className="header__burger-line"></span>
@@ -60,17 +81,17 @@ const Header = () => {
         <nav className={`header__nav ${isMenuOpen ? 'header__nav--active' : ''}`}>
           <ul className="header__nav-list">
             <li className="header__nav-item">
-              <Link to="/about" className="header__nav-link" onClick={toggleMenu}>
+              <Link to="/about" className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
                 {t('header.menu.about')}
               </Link>
             </li>
             <li className="header__nav-item">
-              <Link to="/request" className="header__nav-link" onClick={toggleMenu}>
+              <Link to="/request" className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
                 {t('header.menu.request')}
               </Link>
             </li>
             <li className="header__nav-item">
-              <Link to="/contact" className="header__nav-link" onClick={toggleMenu}>
+              <Link to="/contact" className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
                 {t('header.menu.contact')}
               </Link>
             </li>
@@ -97,30 +118,20 @@ const Header = () => {
   );
 };
 
-const SocialIcons = () => (
+// Оптимизированные подкомпоненты
+const SocialIcons = React.memo(() => (
   <ul className="header__social-list">
-    <SocialIcon
-      href="https://t.me/yourlink"
-      icon={telegramIcon}
-      alt="Telegram"
-    />
-    <SocialIcon
-      href="https://wa.me/1234567890"
-      icon={whatsAppIcon}
-      alt="WhatsApp"
-    />
+    <SocialIcon href="https://t.me/yourlink" icon={telegramIcon} alt="Telegram" />
+    <SocialIcon href="https://wa.me/1234567890" icon={whatsAppIcon} alt="WhatsApp" />
   </ul>
-);
+));
 
-const SocialIcon = ({ href, icon, alt }) => (
+const SocialIcon = React.memo(({ href, icon, alt }) => (
   <li className="header__social-item">
     <a href={href} className="header__social-link" target="_blank" rel="noopener noreferrer" aria-label={alt}>
-      <div
-        className="header__social-icon header__social-svg"
-        style={{ '--svg-url': `url(${icon})` }}
-      />
+      <div className="header__social-svg" style={{ '--svg-url': `url(${icon})` }} />
     </a>
   </li>
-);
+));
 
-export default Header;
+export default React.memo(Header);
