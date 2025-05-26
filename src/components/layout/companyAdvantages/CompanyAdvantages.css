@@ -111,7 +111,7 @@
     z-index: 2;
 
     width: 400px;
-    height: 120px;
+    height: 114.5px;
     padding: 15px;
 
     background-color: var(--color-background-card-l);
@@ -166,8 +166,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
 
     opacity: 0;
     transition: opacity 2s ease, transform 2s ease;

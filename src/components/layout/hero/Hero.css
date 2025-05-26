@@ -17,7 +17,7 @@
             rgba(0, 0, 0, 0) 95%,
             var(--color-background) 98%,
             var(--color-background)),
-        url('../../../assets/background.webp');
+        url('../../../assets/bg.webp');
 
     background-size: cover;
     background-position: center;

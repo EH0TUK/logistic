@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Circle from '../../common/Circle/Circle';
-import Loader from '../../../assets/loader.jpg';
+import Loader from '../../../assets/orig.webp';
 import './CompanyAdvantages.css';
 
 const CompanyAdvantages = () => {

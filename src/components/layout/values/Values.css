@@ -1,5 +1,6 @@
 .values {
-    padding: 40px 0;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .values__title {

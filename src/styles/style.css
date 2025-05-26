@@ -262,9 +262,7 @@ html {
 
         overflow-wrap: break-word;
 
-        /* Переносит длинные слова */
         word-break: normal;
-        /* Стандартное поведение */
     }
 
     .text {

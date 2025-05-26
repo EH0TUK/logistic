@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './AboutUs.css';
-import aboutUsImage from '../../../assets/train-1.jpg';
+import aboutUsImage from '../../../assets/about.png';
 
 const AboutUs = () => {
     const { t } = useTranslation('about');
