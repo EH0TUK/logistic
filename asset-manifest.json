@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/logistic/static/css/main.e4658e94.css",
-    "main.js": "/logistic/static/js/main.cbaae252.js",
-    "static/media/train-1.jpg": "/logistic/static/media/train-1.e3e5a2e38b62d405edb3.jpg",
-    "static/media/background.webp": "/logistic/static/media/background.c19df4d848377134191e.webp",
+    "main.css": "/logistic/static/css/main.aeae0b34.css",
+    "main.js": "/logistic/static/js/main.d78dd312.js",
+    "static/media/bg.webp": "/logistic/static/media/bg.7665a7e09c6a70a35358.webp",
+    "static/media/orig.webp": "/logistic/static/media/orig.8aa8e38733720e13d955.webp",
+    "static/media/about.png": "/logistic/static/media/about.41ec27c26f6d739b7d80.png",
     "static/media/team-member-2.jpg": "/logistic/static/media/team-member-2.ed9b2d431bc975675517.jpg",
+    "static/media/mission.jpg": "/logistic/static/media/mission.b460f635282ff1f492c2.jpg",
     "static/media/background-mobile.webp": "/logistic/static/media/background-mobile.54e0770df42ba80cbe74.webp",
     "static/media/team-member-4.jpg": "/logistic/static/media/team-member-4.c47ff6f551d0e665eb9b.jpg",
-    "static/media/loader.jpg": "/logistic/static/media/loader.5a754af1f28a023b3f02.jpg",
     "static/media/team-member-6.jpg": "/logistic/static/media/team-member-6.4c2dbebac5b536991271.jpg",
     "static/media/team-member-5.jpg": "/logistic/static/media/team-member-5.0aa5367b98c6dd0f0e67.jpg",
     "static/media/Gilroy-Medium.woff": "/logistic/static/media/Gilroy-Medium.45d1838b05540441a85e.woff",
@@ -28,11 +29,11 @@
     "static/media/whatsapp.svg": "/logistic/static/media/whatsapp.d8fb08cd777901f7d67fb8188c7dae95.svg",
     "static/media/telegram.svg": "/logistic/static/media/telegram.d02034502b2a46eacc0b6663220c5adc.svg",
     "static/media/getFetch.cjs": "/logistic/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.e4658e94.css.map": "/logistic/static/css/main.e4658e94.css.map",
-    "main.cbaae252.js.map": "/logistic/static/js/main.cbaae252.js.map"
+    "main.aeae0b34.css.map": "/logistic/static/css/main.aeae0b34.css.map",
+    "main.d78dd312.js.map": "/logistic/static/js/main.d78dd312.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4658e94.css",
-    "static/js/main.cbaae252.js"
+    "static/css/main.aeae0b34.css",
+    "static/js/main.d78dd312.js"
   ]
 }

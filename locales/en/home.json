@@ -1,8 +1,8 @@
 {
     "hero": {
-        "title": "Cargo Transportation in Russia and CIS",
-        "description": "Safe and reliable delivery of your cargo anywhere in the world with a guarantee",
-        "button": "Order"
+        "title": "Transcontinental Cargo Shipping",
+        "description": "Multimodal solutions: rail, road, sea — fast and delay-free",
+        "button": "Get a Quote"
     },
     "companyInfo": {
         "title": "TRANS OFFER",
@@ -10,10 +10,10 @@
     },
     "advantages": {
         "items": [
-            "We offer faster delivery times than companies with warehouses",
-            "Cargo remains undamaged as we avoid warehouse reloading",
-            "Our company works with partial loads and dedicated trucks, depending on the client's needs",
-            "We work on a contractual basis and offer any convenient payment method"
+            "Freight forwarding. End-to-end shipment management from loading to final delivery",
+            "Terminal hubs. Cross-docking and cargo consolidation at modern logistics facilities",
+            "Gauge integration. Seamless transit via combined use of 1520 mm and 1435 mm railway networks",
+            "Multimodal transport. Flexible routing and end-to-end clearance"
         ]
     },
     "stats": {
@@ -23,63 +23,66 @@
         "employees": "Employees"
     },
     "calculator": {
-        "title": "Leave",
-        "subtitle": "a request",
-        "description": "Submit your request and our manager will call you back",
+        "title": "Submit",
+        "subtitle": "request",
+        "description": "Fill out the form and our manager will contact you",
         "fields": {
-            "origin": "Pickup location",
-            "destination": "Delivery destination",
-            "type": "Cargo name",
-            "weight": "Cargo weight (kg)",
-            "volume": "Cargo volume (m³)",
-            "name": "Your name",
-            "phone": "Your phone number",
-            "port": "Destination port",
+            "origin": "Origin point",
+            "destination": "Destination point",
+            "cargoName": "Cargo name",
+            "cargoCode": "Cargo code (HS/UTSNG/FEACN)",
             "deliveryType": "Delivery type",
-            "containerType": "Container type",
-            "customsClearance": "Customs clearance needed",
-            "deliveryTime": "Estimated delivery time"
+            "vehicleType": "Vehicle type",
+            "batchWeight": "Batch weight (tons)",
+            "name": "Your name",
+            "phone": "Phone",
+            "contactPreference": "Preferred contact method",
+            "email": "Email",
+            "notes": "Notes and wishes",
+            "port": "Destination port"
         },
         "deliveryTypes": {
+            "rail": "Railway",
             "multimodal": "Multimodal",
             "road": "Road",
-            "rail": "Railway",
             "sea": "Sea"
         },
-        "containerTypes": {
-            "20ft": "20ft standard",
-            "40ft": "40ft standard",
-            "20ft_ref": "20ft refrigerated",
-            "40ft_ref": "40ft refrigerated",
-            "open_top": "Open Top",
-            "flat_rack": "Flat Rack"
+        "vehicleTypes": {
+            "unknown": "I don't know",
+            "20ft": "20ft container",
+            "40ft": "40ft container",
+            "covered": "Covered wagon",
+            "platform": "Platform",
+            "halfwagon": "Half-wagon",
+            "special": "Specialized"
+        },
+        "contactTypes": {
+            "email": "Email"
         },
         "placeholders": {
-            "origin": "Example: Kazakhstan, Astana",
-            "destination": "Example: Belarus, Brest",
-            "type": "Example: Car",
-            "weight": "Example: 1200",
-            "volume": "Example: 10",
-            "name": "John Doe",
+            "origin": "Example: Moscow, Russia",
+            "destination": "Example: Berlin, Germany",
+            "cargoName": "Example: Steel pipes",
+            "cargoCode": "Example: 7304 90 000 0",
+            "batchWeight": "Example: 25000",
+            "name": "John Smith",
             "phone": "+1 (___) ___-____",
-            "port": "Example: Hamburg port",
-            "containerType": "Example: 20ft refrigerated",
-            "customsClearanceYes": "Yes",
-            "customsClearanceNo": "No",
-            "deliveryTime": "Example: 5-7 days"
+            "email": "example@domain.com",
+            "notes": "Your shipping preferences...",
+            "port": "Example: Port of Rotterdam"
         },
         "errors": {
-            "required": "This field is required",
-            "phoneRequired": "Enter phone number",
+            "required": "Required field",
             "phoneInvalid": "Invalid phone number",
-            "weightFormat": "Enter number (example: 1500)",
-            "volumeFormat": "Enter number (example: 10)",
-            "portRequired": "Specify destination port",
-            "deliveryFormat": "Enter time range (example: 5-7 days)"
+            "emailInvalid": "Invalid email",
+            "weightFormat": "Enter a number (example: 25000)",
+            "contactRequired": "Please provide phone or email",
+            "portRequired": "Port is required for sea shipments"
         },
+        "selectDefault": "Select from list",
         "sending": "Sending...",
-        "button": "Calculate shipment",
-        "agreement": "By clicking the button I agree to the processing of my personal data",
+        "button": "Submit request",
+        "agreement": "By clicking the button you agree to the processing of personal data",
         "success": "Request successfully sent!",
         "error": "Sending error. Please try again."
     },
