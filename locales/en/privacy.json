@@ -30,7 +30,7 @@
                 "Carriers (road, rail, maritime)",
                 "Customs brokers",
                 "Insurance providers",
-                "Government authorities (Customs, Regulatory Agencies)"
+                "Government authorities"
             ]
         },
         "rights": {
@@ -43,13 +43,12 @@
                 "Data portability",
                 "Withdrawal of consent"
             ],
-            "contact": "Submit requests to dpo@transoffer.com"
+            "contact": "Submit requests to dpo@trans-offer.com"
         },
         "security": {
             "title": "5. Security Measures",
             "measures": [
                 "TLS 1.3 encryption",
-                "ISO 27001 certification",
                 "Regular security audits"
             ]
         },

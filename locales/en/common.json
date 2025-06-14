@@ -6,7 +6,7 @@
             "request": "Place an Order",
             "contact": "Contacts"
         },
-        "phone": "+1 (234) 567-890",
+        "phone": "+375 (33) 681 19 19",
         "burgerLabel": "Open menu"
     },
     "footer": {
@@ -16,10 +16,9 @@
             "offer": "Public Offer"
         },
         "phones": [
-            "+380 123 456 789",
-            "+380 987 654 321"
+            "+375 (33) 681 19 19"
         ],
-        "email": "info@company.com",
+        "email": "info@trans-offer.com",
         "copyright": "© 2023 TransOffer. All rights reserved."
     },
     "contacts": {
@@ -30,7 +29,7 @@
             "+1 (987) 654-3210"
         ],
         "emailTitle": "Email",
-        "email": "info@ourcontinent.com",
+        "email": "info@trans-offer.com",
         "socialsTitle": "Social media"
     }
 }

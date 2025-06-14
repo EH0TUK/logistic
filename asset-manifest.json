@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/logistic/static/css/main.a47bef56.css",
-    "main.js": "/logistic/static/js/main.d78dd312.js",
+    "main.css": "/logistic/static/css/main.d44a3d59.css",
+    "main.js": "/logistic/static/js/main.93437dbe.js",
     "static/media/bg.webp": "/logistic/static/media/bg.7665a7e09c6a70a35358.webp",
     "static/media/orig.webp": "/logistic/static/media/orig.8aa8e38733720e13d955.webp",
     "static/media/about.png": "/logistic/static/media/about.41ec27c26f6d739b7d80.png",
@@ -28,11 +28,11 @@
     "static/media/whatsapp.svg": "/logistic/static/media/whatsapp.d8fb08cd777901f7d67fb8188c7dae95.svg",
     "static/media/telegram.svg": "/logistic/static/media/telegram.d02034502b2a46eacc0b6663220c5adc.svg",
     "static/media/getFetch.cjs": "/logistic/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.a47bef56.css.map": "/logistic/static/css/main.a47bef56.css.map",
-    "main.d78dd312.js.map": "/logistic/static/js/main.d78dd312.js.map"
+    "main.d44a3d59.css.map": "/logistic/static/css/main.d44a3d59.css.map",
+    "main.93437dbe.js.map": "/logistic/static/js/main.93437dbe.js.map"
   },
   "entrypoints": [
-    "static/css/main.a47bef56.css",
-    "static/js/main.d78dd312.js"
+    "static/css/main.d44a3d59.css",
+    "static/js/main.93437dbe.js"
   ]
 }

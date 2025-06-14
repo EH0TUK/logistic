@@ -8,27 +8,23 @@
         "items": [
             {
                 "name": "Head Office",
-                "address": "Moskowskaya St, 208, office 803, Belarus, Brest",
+                "address": "Belarus, 224020, Brest, Moskovskaya str., 208, Business Center «Brest Delovoy», office 803",
                 "coordinates": [
-                    55.751244,
-                    37.618423
+                    52.096321,
+                    23.742603
                 ],
                 "phone": "+7 (495) 123-45-67",
-                "email": "info@logistics.com",
+                "email": "info@trans-offer.com",
                 "workingHours": {
                     "weekdays": "Mon-Fri: 9:00 AM - 6:00 PM",
                     "weekend": "Sat-Sun: Closed"
                 }
             },
             {
-                "name": "Legal Address of Trans Offer LLC",
+                "name": "Legal Address of TransOffer LLC",
                 "address": "Pionerskaya St, 52, office 303, Belarus, Brest",
-                "coordinates": [
-                    55.751244,
-                    37.618423
-                ],
                 "phone": "+7 (495) 123-45-67",
-                "email": "info@logistics.com",
+                "email": "info@trans-offer.com",
                 "workingHours": {
                     "weekdays": "Mon-Fri: 9:00 AM - 6:00 PM",
                     "weekend": "Sat-Sun: Closed"
