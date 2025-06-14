@@ -7,7 +7,6 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Request from './pages/Request/Request';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
-import PublicOffer from './pages/PublicOffer/PublicOffer';
 import LanguageManager from './components/common/LanguageManager/LanguageManager';
 
 const ScrollToTop = () => {
@@ -44,7 +43,7 @@ function App() {
             <Route path="/request" element={<Request />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/public-offer" element={<PublicOffer />} />
+            <Route path="/public-offer" element={<Navigate to="/" replace />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

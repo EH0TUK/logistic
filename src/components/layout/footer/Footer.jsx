@@ -26,9 +26,11 @@ const Footer = () => {
               <li className="footer__nav-item">
                 <Link to="/privacy-policy">{t('footer.links.privacy')}</Link>
               </li>
+              {/* 
               <li className="footer__nav-item">
                 <Link to="/public-offer">{t('footer.links.offer')}</Link>
-              </li>
+              </li> 
+              */}
             </ul>
           </nav>
         </div>

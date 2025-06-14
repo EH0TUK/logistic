@@ -83,16 +83,28 @@
     border: 2px solid var(--color-background-card);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .hero {
-        background-position: calc(40% + 50px) center;
+        background-position: 40% center;
+    }
+}
+
+@media (max-width: 1250px) {
+    .hero {
+        background-position: 30% center;
+    }
+}
+
+@media (max-width: 980px) {
+    .hero {
+        background-position: 25% center;
     }
 }
 
 @media (max-width: 768px) {
     .hero {
         padding-bottom: 120px;
-        background-position: calc(20% + 50px) center;
+        background-position: 20% center;
     }
 
     .hero__title {
@@ -104,6 +116,6 @@
 @media (max-width: 576px) {
     .hero {
         padding-bottom: 100px;
-        background-position: calc(20% + 30px) center;
+        background-position: 20% center;
     }
 }

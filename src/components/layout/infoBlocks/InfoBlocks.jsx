@@ -40,20 +40,20 @@ const InfoBlocks = () => {
         <div className="info-blocks">
             <InfoBlock
                 ref={(el) => (infoBlocksRef.current[0] = el)}
-                image={Truck}
-                text={t('infoBlocks.truck')}
+                image={Train}
+                text={t('infoBlocks.train')}
                 className="info-blocks__block info-blocks__block--first"
             />
             <InfoBlock
                 ref={(el) => (infoBlocksRef.current[1] = el)}
-                image={Ship}
+                image={Truck}
                 text={t('infoBlocks.heavyTruck')}
                 className="info-blocks__block info-blocks__block--second"
             />
             <InfoBlock
                 ref={(el) => (infoBlocksRef.current[2] = el)}
-                image={Train}
-                text={t('infoBlocks.train')}
+                image={Ship}
+                text={t('infoBlocks.truck')}
                 className="info-blocks__block info-blocks__block--third"
             />
         </div>
